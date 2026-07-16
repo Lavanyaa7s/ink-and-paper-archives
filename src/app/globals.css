@@ -8,6 +8,7 @@
 @theme inline {
   --font-display: var(--font-bebas-neue), "Bebas Neue", "Anton", "League Gothic", ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-inter-font), "Inter", "Neue Haas Grotesk", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", "Courier Prime", "SF Mono", monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -100,4 +101,22 @@
 
 @utility rule-thin {
   border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+@utility slugline {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-foreground);
+}
+
+@utility hud-text {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
 }
