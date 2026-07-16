@@ -240,30 +240,30 @@ export default function Home() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 px-6 py-20 md:px-16 md:py-28 max-w-7xl mx-auto space-y-48 md:space-y-64"
         >
-          {/* SPREAD 01: PORTFOLIO COVER (Exact PORT / [Subject] / FOLIO composition matching reference image) */}
-          <section className="min-h-[88vh] flex flex-col justify-between text-center border-b border-[#111111]/15 pb-24 relative overflow-visible">
+          {/* SPREAD 01: PORTFOLIO COVER (Exact PORT / [Subject] / FOLIO composition without obstruction) */}
+          <section className="min-h-[86vh] flex flex-col justify-between text-center border-b border-[#111111]/15 pb-24 relative overflow-visible">
             <div className="flex justify-between items-start text-xs font-bold uppercase tracking-[0.26em] text-[#666666]">
               <span>BOOK 01</span>
               <span>CURATED CINEMATIC ARCHIVES</span>
             </div>
 
-            {/* Iconic Layered Composition: PORT + Overlapping Photographer + FOLIO */}
-            <div className="my-14 md:my-20 flex items-center justify-center relative w-full max-w-6xl mx-auto px-2 select-none">
+            {/* Iconic Symmetrical Composition: PORT + Maindhaa Portrait + FOLIO */}
+            <div className="my-12 md:my-16 flex items-center justify-center relative w-full max-w-7xl mx-auto px-4 gap-2 sm:gap-4 md:gap-8 select-none">
               {/* Left Wing: PORT */}
-              <div className="z-10 text-right pr-1 sm:pr-4 md:pr-6 translate-x-4 sm:translate-x-8 md:translate-x-12 flex-1">
-                <div className="display text-[22vw] md:text-[14rem] lg:text-[16rem] leading-[0.76] font-bold tracking-tighter text-[#111111]">
+              <div className="z-10 text-right flex-1 min-w-0">
+                <div className="display text-[16vw] md:text-[11rem] lg:text-[13rem] leading-[0.78] font-bold tracking-tight text-[#111111] truncate sm:overflow-visible">
                   PORT
                 </div>
-                <div className="text-[9px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.32em] text-[#666666] mt-2 md:mt-3 pr-1">
+                <div className="text-[9px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.32em] text-[#666666] mt-3 pr-1">
                   CINEMATIC
                 </div>
               </div>
 
-              {/* Center Overlapping Subject: Maindhaa Figure (z-20 layers over T & F) */}
+              {/* Center Subject: Maindhaa Figure */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="z-20 relative flex-shrink-0 w-[56vw] max-w-[290px] md:max-w-[390px] aspect-[3/4] -mx-6 sm:-mx-12 md:-mx-16 rounded-sm overflow-hidden border border-[#111111]/25 bg-[#EFEFEA] shadow-[0_45px_90px_-20px_rgba(0,0,0,0.38),0_1px_0_rgba(255,255,255,0.8)_inset]"
+                className="z-20 relative flex-shrink-0 w-[62vw] max-w-[270px] sm:max-w-[320px] md:max-w-[360px] aspect-[3/4] rounded-sm overflow-hidden border border-[#111111]/20 bg-[#EFEFEA] shadow-[0_35px_70px_-15px_rgba(0,0,0,0.22)]"
               >
                 <Image
                   src="/portfolio/photographer/maindhaa.png"
@@ -275,11 +275,11 @@ export default function Home() {
               </motion.div>
 
               {/* Right Wing: FOLIO */}
-              <div className="z-10 text-left pl-1 sm:pl-4 md:pl-6 -translate-x-4 sm:-translate-x-8 md:-translate-x-12 flex-1">
-                <div className="display text-[22vw] md:text-[14rem] lg:text-[16rem] leading-[0.76] font-bold tracking-tighter text-[#111111]">
+              <div className="z-10 text-left flex-1 min-w-0">
+                <div className="display text-[16vw] md:text-[11rem] lg:text-[13rem] leading-[0.78] font-bold tracking-tight text-[#111111] truncate sm:overflow-visible">
                   FOLIO
                 </div>
-                <div className="text-[9px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.32em] text-[#666666] mt-2 md:mt-3 pl-1">
+                <div className="text-[9px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.32em] text-[#666666] mt-3 pl-1">
                   PHOTOGRAPHER
                 </div>
               </div>
