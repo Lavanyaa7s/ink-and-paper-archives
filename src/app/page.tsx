@@ -240,18 +240,18 @@ export default function Home() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 px-6 py-20 md:px-16 md:py-28 max-w-7xl mx-auto space-y-48 md:space-y-64"
         >
-          {/* SPREAD 01: PORTFOLIO COVER (Exact PORT / [Subject] / FOLIO composition without obstruction) */}
+          {/* SPREAD 01: PORTFOLIO COVER (Exact 3D Cutout Overlap matching input_file_1.png) */}
           <section className="min-h-[86vh] flex flex-col justify-between text-center border-b border-[#111111]/15 pb-24 relative overflow-visible">
             <div className="flex justify-between items-start text-xs font-bold uppercase tracking-[0.26em] text-[#666666]">
               <span>BOOK 01</span>
               <span>CURATED CINEMATIC ARCHIVES</span>
             </div>
 
-            {/* Iconic Symmetrical Composition: PORT + Maindhaa Portrait + FOLIO */}
-            <div className="my-12 md:my-16 flex items-center justify-center relative w-full max-w-7xl mx-auto px-4 gap-2 sm:gap-4 md:gap-8 select-none">
+            {/* Iconic 3D Cutout Overlap: PORT + Free-Standing Silhouette + FOLIO */}
+            <div className="my-12 md:my-16 flex items-center justify-center relative w-full max-w-7xl mx-auto px-2 select-none">
               {/* Left Wing: PORT */}
-              <div className="z-10 text-right flex-1 min-w-0">
-                <div className="display text-[16vw] md:text-[11rem] lg:text-[13rem] leading-[0.78] font-bold tracking-tight text-[#111111] truncate sm:overflow-visible">
+              <div className="z-10 text-right flex-1 min-w-0 pr-1 sm:pr-2 md:pr-4">
+                <div className="display text-[18vw] md:text-[13rem] lg:text-[15rem] leading-[0.78] font-bold tracking-tight text-[#111111]">
                   PORT
                 </div>
                 <div className="text-[9px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.32em] text-[#666666] mt-3 pr-1">
@@ -259,24 +259,24 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Center Subject: Maindhaa Figure */}
+              {/* Center 3D Cutout Silhouette: Maindhaa (No background box, no border box!) */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="z-20 relative flex-shrink-0 w-[62vw] max-w-[270px] sm:max-w-[320px] md:max-w-[360px] aspect-[3/4] rounded-sm overflow-hidden border border-[#111111]/20 bg-[#EFEFEA] shadow-[0_35px_70px_-15px_rgba(0,0,0,0.22)]"
+                className="z-20 relative flex-shrink-0 w-[64vw] max-w-[280px] sm:max-w-[360px] md:max-w-[420px] aspect-[3/4] -mx-8 sm:-mx-16 md:-mx-24 drop-shadow-[0_30px_45px_rgba(0,0,0,0.32)] pointer-events-auto"
               >
                 <Image
                   src="/portfolio/photographer/maindhaa.png"
-                  alt="Maindhaa — Lead Photographer Cover Plate"
+                  alt="Maindhaa — Lead Photographer Cutout Silhouette"
                   fill
-                  className="object-cover grayscale contrast-110 transition-transform duration-700 hover:scale-105"
+                  className="object-contain grayscale contrast-110 transition-transform duration-700 hover:scale-105"
                   priority
                 />
               </motion.div>
 
               {/* Right Wing: FOLIO */}
-              <div className="z-10 text-left flex-1 min-w-0">
-                <div className="display text-[16vw] md:text-[11rem] lg:text-[13rem] leading-[0.78] font-bold tracking-tight text-[#111111] truncate sm:overflow-visible">
+              <div className="z-10 text-left flex-1 min-w-0 pl-1 sm:pl-2 md:pl-4">
+                <div className="display text-[18vw] md:text-[13rem] lg:text-[15rem] leading-[0.78] font-bold tracking-tight text-[#111111]">
                   FOLIO
                 </div>
                 <div className="text-[9px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.32em] text-[#666666] mt-3 pl-1">
