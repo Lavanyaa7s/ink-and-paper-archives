@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 /* THE COLLECTION — Mainz Media
- * Paper-white / Ink-black editorial system exactly following ink-and-paper-archives.
- * Colors are strict: no gradients, no neon, no glass.
+ * Warm White (#FAFAF7) / Almost Black (#111111) editorial Swiss layout.
+ * Colors are strict: no gradients, no neon, no glassmorphism.
  */
 
 @theme inline {
-  --font-display: var(--font-bebas-neue), "Bebas Neue", "Anton", ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-inter-font), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bebas-neue), "Bebas Neue", "Anton", "League Gothic", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter-font), "Inter", "Neue Haas Grotesk", "Geist", ui-sans-serif, system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -30,27 +30,26 @@
 
 :root {
   --radius: 0rem;
-  /* Paper White #FAF9F6 */
-  --background: oklch(0.982 0.003 90);
-  /* Ink Black #0D0D0D */
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(0.982 0.003 90);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.145 0 0);
-  --primary-foreground: oklch(0.982 0.003 90);
-  --secondary: oklch(0.93 0 0);
-  --secondary-foreground: oklch(0.145 0 0);
-  /* Light Gray #E8E8E8 */
-  --muted: oklch(0.925 0 0);
-  /* Dark Gray #787878 */
-  --muted-foreground: oklch(0.53 0 0);
-  --accent: oklch(0.155 0 0);
-  --accent-foreground: oklch(0.982 0.003 90);
-  --border: oklch(0.145 0 0);
-  --input: oklch(0.145 0 0);
-  --ring: oklch(0.145 0 0);
+  /* Warm white #FAFAF7 */
+  --background: #FAFAF7;
+  /* Almost black #111111 */
+  --foreground: #111111;
+  --card: #FAFAF7;
+  --card-foreground: #111111;
+  --popover: #FAFAF7;
+  --popover-foreground: #111111;
+  --primary: #111111;
+  --primary-foreground: #FAFAF7;
+  --secondary: #E5E5E3;
+  --secondary-foreground: #111111;
+  /* Subtle gray */
+  --muted: #EFEFEA;
+  --muted-foreground: #666666;
+  --accent: #E5E5E3;
+  --accent-foreground: #111111;
+  --border: rgba(17, 17, 17, 0.15);
+  --input: rgba(17, 17, 17, 0.2);
+  --ring: #111111;
 }
 
 @layer base {
@@ -60,46 +59,45 @@
     padding: 0;
     box-sizing: border-box;
   }
-
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
-    font-feature-settings: "ss01", "cv11";
-    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-  }
-
-  h1, h2, h3, .display {
-    font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: 0.005em;
-    line-height: 0.9;
   }
 }
 
+/* Custom editorial typography utility classes */
 @utility label {
   font-family: var(--font-body);
   font-size: 0.6875rem;
-  letter-spacing: 0.22em;
+  font-weight: 600;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  font-weight: 500;
-  color: var(--muted-foreground);
+  color: var(--color-muted-foreground);
 }
 
 @utility label-ink {
   font-family: var(--font-body);
   font-size: 0.6875rem;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  font-weight: 500;
-  color: var(--foreground);
+  color: var(--color-foreground);
+}
+
+@utility display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 0.88;
 }
 
 @utility rule {
-  border-top: 1px solid var(--foreground);
+  border-bottom: 1px solid var(--color-border);
 }
 
 @utility rule-thin {
-  border-top: 1px solid color-mix(in oklab, var(--foreground) 25%, transparent);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.12);
 }
