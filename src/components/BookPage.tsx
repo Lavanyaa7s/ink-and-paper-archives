@@ -34,8 +34,10 @@ export function BookPage({ chapter, chapterTitle, page, next, prev, children }: 
         {/* Registration corner marks for $200 coffee-table book */}
         <header className="pointer-events-none absolute inset-x-0 top-0 z-20 flex items-start justify-between px-6 pt-6 md:px-16 md:pt-12">
           <div className="label-ink pointer-events-auto font-medium tracking-[0.24em]">
-            <div className="text-foreground font-bold">BOOK 01 — THE MASTER COLLECTION</div>
-            <div className="mt-1 text-muted-foreground">MAINZ MEDIA / MALAYSIA</div>
+            <Link href="/" className="text-foreground font-bold hover:opacity-75 transition-opacity block cursor-pointer">
+              BOOK 01 — MAINZ MEDIA ARCHIVES
+            </Link>
+            <div className="mt-1 text-muted-foreground">KUALA LUMPUR / MALAYSIA</div>
           </div>
           <div className="label-ink pointer-events-auto text-right font-medium tracking-[0.24em]">
             <div className="text-foreground font-bold">{chapter}</div>
