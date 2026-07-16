@@ -24,63 +24,64 @@ export function BookPage({ chapter, chapterTitle, page, next, prev, children }: 
     <AnimatePresence mode="wait">
       <motion.div
         key={page}
-        initial={{ opacity: 0, rotateY: -6, transformPerspective: 1600 }}
+        initial={{ opacity: 0, rotateY: -4, transformPerspective: 1600 }}
         animate={{ opacity: ready ? 1 : 0, rotateY: 0 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="relative min-h-screen bg-background text-foreground overflow-hidden"
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="relative min-h-screen bg-[#FAFAF7] text-[#111111] overflow-hidden select-none font-sans"
         style={{ transformStyle: "preserve-3d" }}
       >
-        {/* Director's Optical Viewfinder & Screenplay Registration header */}
-        <header className="pointer-events-none absolute inset-x-0 top-0 z-20 flex items-start justify-between px-6 pt-6 md:px-16 md:pt-12 font-mono text-xs">
-          <div className="pointer-events-auto font-medium tracking-[0.22em] text-[#111111]">
-            <Link href="/" className="group flex items-center gap-3.5 font-bold hover:opacity-75 transition-opacity cursor-pointer">
-              <span className="flex items-center gap-2 px-2 py-0.5 bg-[#111111] text-[#FAFAF7] rounded-[2px] text-[10px]">
-                <span className="h-2 w-2 rounded-full bg-rose-600 animate-pulse inline-block" />
-                <span>REC</span>
-              </span>
-              <span>[ CAMERA ROLL 01 • MAINZ ARCHIVES ]</span>
+        {/* Archival Museum Registration Header (Clean, High-End RM 1200+ Monograph) */}
+        <header className="pointer-events-none absolute inset-x-0 top-0 z-20 flex items-start justify-between px-6 pt-6 md:px-16 md:pt-12 text-xs">
+          <div className="pointer-events-auto font-medium tracking-[0.24em]">
+            <Link
+              href="/"
+              className="text-[#111111] font-bold hover:opacity-75 transition-opacity block cursor-pointer display text-base sm:text-lg"
+            >
+              MAINZ MEDIA — ARCHIVES
             </Link>
-            <div className="mt-2 text-[#666666] text-[11px] tracking-widest pl-1">INT. KUALA LUMPUR / MALAYSIA — 35MM ANAMORPHIC</div>
+            <div className="mt-1 text-[#666666] text-[10px] tracking-widest uppercase font-semibold">
+              KUALA LUMPUR / MALAYSIA · EST. 2023
+            </div>
           </div>
-          <div className="pointer-events-auto text-right font-medium tracking-[0.24em] uppercase">
-            <div className="text-rose-600 font-bold">{chapter}</div>
-            <div className="mt-1 text-[#111111] font-semibold">{chapterTitle}</div>
+          <div className="pointer-events-auto text-right font-medium tracking-[0.24em] uppercase text-xs">
+            <div className="text-[#111111] font-bold display text-base sm:text-lg">{chapter}</div>
+            <div className="mt-1 text-[#666666] text-[10px] uppercase tracking-widest">{chapterTitle}</div>
           </div>
         </header>
 
         {/* Content Area with generous print margins */}
-        <main className="relative z-10 px-6 pt-32 pb-44 md:px-20 md:pt-40 md:pb-52">
+        <main className="relative z-10 px-6 pt-32 pb-44 md:px-20 md:pt-40 md:pb-52 max-w-7xl mx-auto">
           {children}
         </main>
 
-        {/* Bottom Screenplay Action Navigation */}
-        <footer className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-between px-6 pb-6 md:px-16 md:pb-12 font-mono text-xs font-bold uppercase tracking-[0.24em]">
-          <div className="pointer-events-auto text-[#111111]">
-            <span>[ SCRIPT {page} ]</span>
+        {/* Bottom Editorial Turn Navigation */}
+        <footer className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-between px-6 pb-6 md:px-16 md:pb-12 text-xs font-bold uppercase tracking-[0.24em]">
+          <div className="pointer-events-auto text-[#111111] font-bold">
+            {page}
           </div>
           <div className="flex gap-10">
             {prev && (
               <Link
                 href={prev.to}
-                className="pointer-events-auto text-[#111111] transition-colors hover:text-rose-600 cursor-pointer"
+                className="pointer-events-auto text-[#111111] transition-colors hover:text-[#666666] cursor-pointer"
               >
-                ← [ CUT TO: {prev.label} ]
+                ← {prev.label}
               </Link>
             )}
             {next && (
               <Link
                 href={next.to}
-                className="pointer-events-auto text-[#111111] transition-colors hover:text-rose-600 cursor-pointer"
+                className="pointer-events-auto text-[#111111] transition-colors hover:text-[#666666] cursor-pointer"
               >
-                [ CUT TO: {next.label} ] →
+                {next.label} →
               </Link>
             )}
           </div>
         </footer>
 
-        {/* Thick paper edge crease shadow on left */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-12 bg-gradient-to-r from-black/[0.05] via-black/[0.02] to-transparent" />
+        {/* Subtle physical paper edge shadow */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-12 bg-gradient-to-r from-black/[0.04] via-black/[0.01] to-transparent" />
       </motion.div>
     </AnimatePresence>
   );
