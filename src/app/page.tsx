@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { CoverAboutScroll } from "@/components/CoverAboutScroll";
 
 export default function Home() {
   // Phases: 'dark' (spotlight) -> 'card' (ID dropped) -> 'lifting' (card flips open) -> 'opened' (warm white book)
@@ -238,207 +239,105 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 px-6 py-20 md:px-16 md:py-28 max-w-7xl mx-auto space-y-48 md:space-y-64"
+          className="relative z-10 w-full"
         >
-          {/* SPREAD 01: PORTFOLIO COVER (Exact 3D Cutout Overlap matching input_file_1.png) */}
-          <section className="min-h-[86vh] flex flex-col justify-between text-center border-b border-[#111111]/15 pb-24 relative overflow-visible">
-            <div className="flex justify-between items-start text-xs font-bold uppercase tracking-[0.26em] text-[#666666]">
-              <span>BOOK 01</span>
-              <span>CURATED CINEMATIC ARCHIVES</span>
-            </div>
+          {/* SPREADS 01 & 02: SYNCHRONIZED KEYFRAME SCROLL TRACK (Cover -> About Me) */}
+          <CoverAboutScroll />
 
-            {/* Iconic 3D Cutout Overlap: PORT + Free-Standing Silhouette + FOLIO */}
-            <div className="my-12 md:my-16 flex items-center justify-center relative w-full max-w-7xl mx-auto px-2 select-none">
-              {/* Left Wing: PORT */}
-              <div className="z-10 text-right flex-1 min-w-0 pr-1 sm:pr-2 md:pr-4">
-                <div className="display text-[18vw] md:text-[13rem] lg:text-[15rem] leading-[0.78] font-bold tracking-tight text-[#111111]">
-                  PORT
-                </div>
-                <div className="text-[9px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.32em] text-[#666666] mt-3 pr-1">
-                  CINEMATIC
-                </div>
-              </div>
-
-              {/* Center 3D Cutout Silhouette: Maindhaa (No background box, no border box!) */}
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="z-20 relative flex-shrink-0 w-[64vw] max-w-[280px] sm:max-w-[360px] md:max-w-[420px] aspect-[3/4] -mx-8 sm:-mx-16 md:-mx-24 drop-shadow-[0_30px_45px_rgba(0,0,0,0.32)] pointer-events-auto"
-              >
-                <Image
-                  src="/portfolio/photographer/maindhaa.png"
-                  alt="Maindhaa — Lead Photographer Cutout Silhouette"
-                  fill
-                  className="object-contain grayscale contrast-110 transition-transform duration-700 hover:scale-105"
-                  priority
-                />
-              </motion.div>
-
-              {/* Right Wing: FOLIO */}
-              <div className="z-10 text-left flex-1 min-w-0 pl-1 sm:pl-2 md:pl-4">
-                <div className="display text-[18vw] md:text-[13rem] lg:text-[15rem] leading-[0.78] font-bold tracking-tight text-[#111111]">
-                  FOLIO
-                </div>
-                <div className="text-[9px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.32em] text-[#666666] mt-3 pl-1">
-                  PHOTOGRAPHER
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-[0.26em] text-[#666666]">
-              <span>MAINZ MEDIA</span>
-              <span className="text-[#111111] font-bold">PHOTOGRAPHY COLLECTION 2025</span>
-              <span>MALAYSIA</span>
-            </div>
-          </section>
-
-          {/* SPREAD 02: EDITORIAL INTRODUCTION (Large portrait left, beautiful story right, minimal stats perfectly aligned) */}
-          <section className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-center border-b border-[#111111]/15 pb-32">
-            {/* Left Column: Large Portrait */}
-            <div className="md:col-span-6">
-              <div className="relative aspect-[4/5] w-full overflow-hidden border border-[#111111]/15 bg-[#EFEFEA] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)]">
-                <Image
-                  src="/portfolio/portrait/portrait-04.jpg"
-                  alt="Maindhaa Portrait Study"
-                  fill
-                  className="object-cover grayscale contrast-110"
-                />
-              </div>
-              <div className="mt-4 flex justify-between text-xs font-bold uppercase tracking-[0.24em] text-[#666666]">
-                <span>FIG. 01 — THE ARTIST IN SILENCE</span>
-                <span>EST. 2023 · KUALA LUMPUR</span>
-              </div>
-            </div>
-
-            {/* Right Column: Beautiful Story + Philosophy + Minimal Stats */}
-            <div className="md:col-span-6 flex flex-col justify-center">
-              <div className="text-xs font-bold uppercase tracking-[0.26em] text-[#666666]">
-                INTRODUCTION · SPREAD 02
-              </div>
-              <h2 className="mt-4 display text-5xl md:text-7xl font-bold text-[#111111] leading-[0.86]">
-                PHILOSOPHY &amp;
-                <br />
-                STORYTELLING
-              </h2>
-
-              <div className="mt-8 h-px w-24 bg-[#111111]" />
-
-              <blockquote className="mt-8 text-2xl md:text-3xl font-light italic leading-relaxed text-[#111111] tracking-wide">
-                &ldquo;We do not capture what you look like; we preserve the exact resonance of how the moment felt when the world stopped watching.&rdquo;
-              </blockquote>
-
-              <p className="mt-6 text-base leading-relaxed text-[#666666] font-normal">
-                Based in Malaysia, Mainz Media approaches photography not as a mechanical recording of events, but as the creation of an enduring physical archive. Through rain-soaked wedding vows and silent automotive garages at twilight, every shutter press is an exercise in intentional distillation.
-              </p>
-
-              <p className="mt-4 text-base leading-relaxed text-[#666666] font-normal">
-                We strip away artificial poses, aggressive modifiers, and visual noise until only raw, timeless human emotion remains on the paper spread.
-              </p>
-
-              {/* Perfectly Aligned Minimal Statistics (No Camera Specs Here!) */}
-              <div className="mt-14 pt-8 border-t border-[#111111]/15 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+          {/* REMAINING SPREADS (Spread 03 onward) */}
+          <div className="px-6 py-20 md:px-16 md:py-28 max-w-7xl mx-auto space-y-48 md:space-y-64">
+            {/* SPREAD 03: CHAPTER INDEX (Full-page editorial layout, clean typography dominates, no card UI, no boxed sections) */}
+            <section className="min-h-[80vh] border-b border-[#111111]/15 pb-32">
+              <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
                 <div>
-                  <div className="display text-4xl md:text-5xl font-bold text-[#111111]">3+</div>
-                  <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[#666666]">YEARS EXP.</div>
+                  <div className="text-xs font-bold uppercase tracking-[0.26em] text-[#666666]">
+                    SPREAD 03 · INDEX &amp; GALLERIES
+                  </div>
+                  <h2 className="mt-4 display text-6xl md:text-8xl font-bold text-[#111111]">
+                    CURATED
+                    <br />
+                    DISCIPLINES
+                  </h2>
                 </div>
-                <div>
-                  <div className="display text-4xl md:text-5xl font-bold text-[#111111]">200+</div>
-                  <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[#666666]">PROJECTS</div>
-                </div>
-                <div>
-                  <div className="display text-4xl md:text-5xl font-bold text-[#111111]">50+</div>
-                  <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[#666666]">CLIENTS</div>
-                </div>
-                <div>
-                  <div className="display text-4xl md:text-5xl font-bold text-[#111111]">4</div>
-                  <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[#666666]">COUNTRIES</div>
-                </div>
+                <p className="mt-6 md:mt-0 max-w-md text-sm text-[#666666] leading-relaxed font-normal">
+                  Every photograph is an original master plate. Explore our five core editorial disciplines below, organized chronologically by archival volume.
+                </p>
               </div>
-            </div>
-          </section>
 
-          {/* SPREAD 03: CHAPTER INDEX (Full-page editorial layout, clean typography dominates, no card UI, no boxed sections) */}
-          <section className="min-h-[80vh] border-b border-[#111111]/15 pb-32">
-            <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
-              <div>
-                <div className="text-xs font-bold uppercase tracking-[0.26em] text-[#666666]">
-                  SPREAD 03 · THE COLLECTION INDEX
-                </div>
-                <h2 className="mt-4 display text-[11vw] md:text-[8rem] leading-[0.82] font-bold text-[#111111]">
-                  CHAPTERS
-                </h2>
-              </div>
-              <p className="max-w-xs text-xs font-bold uppercase tracking-[0.22em] text-[#666666] mt-4 md:mt-0">
-                SELECT A CHAPTER BELOW TO TURN DIRECTLY TO THE PRINT SPREAD →
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-              {/* Clean Typography List */}
-              <div className="md:col-span-8 divide-y divide-[#111111]/15 border-y border-[#111111]/15">
-                {chapters.map((c, i) => (
-                  <Link
-                    key={c.n}
-                    href={c.to}
-                    onMouseEnter={() => setActiveChapter(i)}
-                    className="group py-8 md:py-12 flex items-baseline justify-between transition-all hover:pl-6 cursor-pointer block"
+              {/* Minimalist Interactive Exhibition List */}
+              <div className="divide-y divide-[#111111]/20 border-y border-[#111111]/20">
+                {[
+                  {
+                    num: "01",
+                    title: "AUTOMOTIVE SERIES",
+                    desc: "High-speed circuit documentation & twilight machine portraits.",
+                    slug: "/automotive",
+                    img: "/portfolio/automotive/automotive-01.jpg",
+                  },
+                  {
+                    num: "02",
+                    title: "EDITORIAL PORTRAITS",
+                    desc: "Intimate character studies & natural light monochrome plates.",
+                    slug: "/portraits",
+                    img: "/portfolio/portrait/portrait-01.jpg",
+                  },
+                  {
+                    num: "03",
+                    title: "WEDDING MONOGRAPH",
+                    desc: "Unscripted documentary coverage of rain-soaked vows & pure joy.",
+                    slug: "/weddings",
+                    img: "/portfolio/wedding/wedding-01.jpg",
+                  },
+                  {
+                    num: "04",
+                    title: "EVENTS & NEWBORN",
+                    desc: "Organic in-home documentation & unhurried familial milestones.",
+                    slug: "/newborn",
+                    img: "/portfolio/newborn/newborn-01.jpg",
+                  },
+                  {
+                    num: "05",
+                    title: "COMMERCIAL & BRAND",
+                    desc: "Architectural interiors, luxury lookbooks, & brand narratives.",
+                    slug: "/commercial",
+                    img: "/portfolio/commercial/commercial-01.jpg",
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={item.slug}
+                    onMouseEnter={() => setActiveChapter(idx)}
+                    onMouseLeave={() => setActiveChapter(null)}
+                    className="group py-10 md:py-14 flex flex-col md:flex-row md:items-center justify-between gap-6 transition-colors hover:bg-[#111111]/[0.02]"
                   >
-                    <div className="flex items-baseline gap-6 md:gap-10">
-                      <span className="text-sm font-bold tracking-[0.24em] text-[#666666] group-hover:text-[#111111]">
-                        {c.n}
+                    <div className="flex items-baseline gap-8 md:gap-16">
+                      <span className="display text-2xl md:text-4xl text-[#666666] group-hover:text-[#111111] font-bold transition-colors">
+                        {item.num}
                       </span>
-                      <span className="display text-5xl md:text-7xl font-bold tracking-tight text-[#111111] group-hover:underline">
-                        {c.title}
-                      </span>
+                      <div>
+                        <h3 className="display text-4xl md:text-6xl font-bold tracking-tight text-[#111111] group-hover:translate-x-3 transition-transform duration-500">
+                          {item.title}
+                        </h3>
+                        <p className="mt-2 text-xs md:text-sm text-[#666666] font-normal tracking-wide">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.24em] text-[#666666] group-hover:text-[#111111]">
-                      <span className="hidden sm:inline">{c.desc}</span>
-                      <span className="text-base font-bold">Explore →</span>
+
+                    <div className="flex items-center gap-6 self-end md:self-center">
+                      <Link
+                        href={item.slug}
+                        className="inline-flex items-center gap-3 border border-[#111111]/30 px-6 py-3 text-xs font-bold uppercase tracking-[0.24em] text-[#111111] transition-all hover:border-[#111111] hover:bg-[#111111] hover:text-[#FAFAF7] cursor-pointer"
+                      >
+                        <span>EXPLORE GALLERY</span>
+                        <span>→</span>
+                      </Link>
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
+            </section>
 
-              {/* Floating Exhibition Preview Plate */}
-              <div className="md:col-span-4 sticky top-32 hidden md:block">
-                {activeChapter !== null ? (
-                  <motion.div
-                    key={activeChapter}
-                    initial={{ opacity: 0, scale: 0.96 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4 }}
-                    className="relative aspect-[3/4] w-full overflow-hidden border border-[#111111]/15 bg-[#EFEFEA] shadow-2xl"
-                  >
-                    <Image
-                      src={chapters[activeChapter].img}
-                      alt={chapters[activeChapter].title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute bottom-4 left-4 right-4 bg-[#FAFAF7]/95 px-4 py-3 border border-[#111111]/10 text-center">
-                      <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#111111]">
-                        {chapters[activeChapter].title} SPREAD
-                      </div>
-                      <div className="text-[9px] uppercase tracking-[0.18em] text-[#666666] mt-0.5">
-                        TURN PAGE TO VIEW GALLERY →
-                      </div>
-                    </div>
-                  </motion.div>
-                ) : (
-                  <div className="aspect-[3/4] w-full border border-dashed border-[#111111]/20 flex flex-col items-center justify-center p-8 text-center text-[#666666]">
-                    <div className="text-xs font-bold uppercase tracking-[0.24em]">
-                      CURATORIAL PREVIEW
-                    </div>
-                    <p className="mt-2 text-xs leading-relaxed">
-                      Hover over any chapter on the left to preview its master archival plate.
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </section>
-
-          {/* SPREAD 04: COMMISSION & BOOKING FOOTER JUMP */}
+            {/* SPREAD 04: COMMISSION & BOOKING FOOTER JUMP */}
           <section className="pt-8 pb-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
             <div>
               <div className="text-xs font-bold uppercase tracking-[0.26em] text-[#666666]">
@@ -465,6 +364,7 @@ export default function Home() {
               </Link>
             </div>
           </section>
+        </div>
         </motion.main>
       )}
     </div>
