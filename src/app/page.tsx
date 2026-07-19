@@ -76,7 +76,7 @@ export default function LandingPage() {
           {/* Foreground Portrait Cutout */}
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-[70%] md:w-[50%] lg:w-[45%] max-w-[650px] h-[65%] md:h-[75%] z-10 pointer-events-none">
             <Image 
-              src="/portraitMaindha.png" 
+              src="/portfolio/photographer/portraitMaindha.png" 
               alt="Maindha Portrait" 
               fill 
               className="object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
