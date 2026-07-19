@@ -68,7 +68,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 30 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="font-[family-name:var(--font-yeseva)] uppercase text-[14vw] md:text-[11vw] leading-none tracking-tight pr-4 md:pr-10"
+                className="font-[family-name:var(--font-yeseva)] uppercase text-[11vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] leading-none tracking-tight whitespace-nowrap"
               >
                 MAINZ MEDIA
               </motion.h1>
@@ -76,7 +76,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-[10%] md:-bottom-[15%] lg:-bottom-[20%] right-[2%] md:right-[8%] text-xl md:text-2xl lg:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide"
+                className="absolute -bottom-[20%] md:-bottom-[15%] lg:-bottom-[20%] right-0 md:right-[2%] lg:right-[5%] text-2xl md:text-2xl lg:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide"
               >
                 Maindha
               </motion.div>
