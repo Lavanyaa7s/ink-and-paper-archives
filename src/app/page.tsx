@@ -48,7 +48,7 @@ export default function LandingPage() {
           </div>
           <Link 
             href="/booking" 
-            className="bg-[#FAFCBE] text-[#92000A] px-6 py-2 rounded-md font-bold text-sm hover:bg-white transition-colors"
+            className="bg-[#FAFCBE] text-[#92000A] px-6 py-2 rounded-md font-bold text-sm hover:bg-white transition-colors shadow-lg"
           >
             BOOK NOW
           </Link>
@@ -56,41 +56,38 @@ export default function LandingPage() {
       </header>
 
       <main>
-        {/* 2. VALUE PROPOSITION & MAIN OFFER (Hero - Sangria Background) */}
-        <section className="px-6 py-20 md:py-32 bg-[#92000A] text-[#FAFCBE]">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial="hidden" animate="visible" variants={fadeUp}
-              className="flex flex-col items-start"
-            >
-              <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-                Cinematic Emotion, Immortalized in Light.
+        {/* 2. HERO SECTION (Exactly matching the user's uploaded image) */}
+        <section className="relative w-full h-[85vh] min-h-[600px] bg-[#92000A] text-[#FAFCBE] overflow-hidden flex flex-col justify-between pt-8 md:pt-12">
+          
+          {/* Top subtle text row from the image */}
+          <div className="relative z-20 max-w-7xl mx-auto w-full px-6 md:px-12 flex justify-between items-center text-xs md:text-sm font-serif tracking-wide opacity-90">
+            <span>Save the date</span>
+            <span className="hidden sm:inline">Check-in starts</span>
+            <span className="hidden sm:inline">Event begins at</span>
+            <span>See you there</span>
+          </div>
+
+          {/* Massive Typography Background */}
+          <div className="absolute top-[45%] md:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-2">
+            <div className="relative inline-block">
+              <h1 className="font-serif italic text-[16vw] md:text-[13vw] leading-none tracking-tight pr-4 md:pr-10">
+                Photographer
               </h1>
-              <p className="text-lg opacity-90 mb-8 max-w-lg leading-relaxed">
-                Malaysia’s premier photography studio for unscripted weddings, architectural commerce, and high-performance automotive. We transform fleeting seconds into enduring visual legacies.
-              </p>
-              <Link 
-                href="/pricing" 
-                className="bg-[#FAFCBE] text-[#92000A] px-8 py-4 rounded-md font-bold text-lg hover:bg-white transition-colors w-full sm:w-auto text-center shadow-lg"
-              >
-                VIEW PORTFOLIO & RATES
-              </Link>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative aspect-[4/5] md:aspect-square rounded-xl overflow-hidden border border-[#FAFCBE]/20 shadow-2xl"
-            >
-              <Image 
-                src="/portraitMaindha.png" 
-                alt="Mainz Media Photography" 
-                fill 
-                className="object-contain object-bottom drop-shadow-2xl bg-[#92000A]"
-                priority
-              />
-            </motion.div>
+              <div className="absolute -bottom-[5%] md:-bottom-[15%] right-0 md:-right-[2%] text-2xl md:text-4xl lg:text-5xl font-sans tracking-wide">
+                Maindha
+              </div>
+            </div>
+          </div>
+
+          {/* Foreground Portrait Cutout */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-[70%] md:w-[50%] lg:w-[45%] max-w-[650px] h-[65%] md:h-[75%] z-10 pointer-events-none">
+            <Image 
+              src="/portraitMaindha.png" 
+              alt="Maindha Portrait" 
+              fill 
+              className="object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+              priority
+            />
           </div>
         </section>
 
