@@ -78,7 +78,25 @@ export default function LandingPage() {
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-[20%] md:-bottom-[15%] lg:-bottom-[20%] right-[-5%] md:right-[2%] lg:right-[5%] text-5xl md:text-3xl lg:text-5xl font-[family-name:var(--font-shrikhand)] tracking-wide z-[60] md:z-10 text-[#FAFCBE]"
+                className="absolute -bottom-[20%] md:-bottom-[15%] lg:-bottom-[20%] right-[-5%] md:right-[2%] lg:right-[5%] text-5xl md:text-3xl lg:text-5xl font-[family-name:var(--font-shrikhand)] tracking-wide z-10 hidden md:block"
+              >
+                Maindha
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Foreground Signature (Mobile Only) */}
+          <div className="absolute top-[40%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 md:hidden">
+            <div className="relative inline-block">
+              {/* Invisible placeholder to match dimensions */}
+              <h1 className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] leading-none tracking-tight whitespace-nowrap flex flex-col opacity-0">
+                <span>MAINZ</span> <span>MEDIA</span>
+              </h1>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }} 
+                animate={{ opacity: 1, scale: 1 }} 
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                className="absolute -bottom-[20%] right-[-5%] text-5xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#FAFCBE]"
               >
                 Maindha
               </motion.div>
