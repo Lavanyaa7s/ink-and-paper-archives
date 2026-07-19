@@ -62,21 +62,21 @@ export default function LandingPage() {
 
 
           {/* Massive Typography Background */}
-          <div className="absolute top-[35%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-2">
+          <div className="absolute top-[40%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-2">
             <div className="relative inline-block">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="font-[family-name:var(--font-yeseva)] uppercase text-[11vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] leading-none tracking-tight whitespace-nowrap"
+                className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] md:text-[11vw] lg:text-[10vw] leading-[0.85] md:leading-none tracking-tight whitespace-normal md:whitespace-nowrap flex flex-col md:inline"
               >
-                MAINZ MEDIA
+                <span>MAINZ</span> <span>MEDIA</span>
               </motion.h1>
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-[20%] md:-bottom-[15%] lg:-bottom-[20%] right-0 md:right-[2%] lg:right-[5%] text-2xl md:text-2xl lg:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide"
+                className="absolute -bottom-[5%] md:-bottom-[15%] lg:-bottom-[20%] right-[-5%] md:right-[2%] lg:right-[5%] text-5xl md:text-3xl lg:text-5xl font-[family-name:var(--font-shrikhand)] tracking-wide"
               >
                 Maindha
               </motion.div>
@@ -88,7 +88,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 100 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-[70%] md:w-[50%] lg:w-[45%] max-w-[650px] h-[65%] md:h-[75%] z-10 pointer-events-none"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-[80%] md:w-[60%] lg:w-[45%] max-w-[650px] h-[75%] md:h-[80%] lg:h-[85%] z-10 pointer-events-none"
           >
             <Image 
               src="/portfolio/photographer/portraitMaindha.png" 
