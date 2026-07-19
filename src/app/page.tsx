@@ -35,8 +35,8 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#92000A] text-[#FAFCBE] font-sans selection:bg-[#FAFCBE] selection:text-[#92000A]">
       
-      {/* 1. SIMPLE & STICKY HEADER (Sangria Background) */}
-      <header className="sticky top-0 z-50 w-full bg-[#92000A]/95 backdrop-blur-md border-b border-[#FAFCBE]/20 px-6 py-4">
+      {/* 1. SIMPLE HEADER (Transparent, No Bar) */}
+      <header className="absolute top-0 left-0 w-full z-50 px-6 py-8 md:py-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/" className="font-extrabold text-xl tracking-tight uppercase">
             MAINZ MEDIA
@@ -64,10 +64,10 @@ export default function LandingPage() {
           {/* Massive Typography Background */}
           <div className="absolute top-[45%] md:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-2">
             <div className="relative inline-block">
-              <h1 className="font-serif italic text-[16vw] md:text-[13vw] leading-none tracking-tight pr-4 md:pr-10">
-                Photographer
+              <h1 className="font-[family-name:var(--font-bodoni)] uppercase text-[14vw] md:text-[11vw] leading-none tracking-tight pr-4 md:pr-10">
+                MAINZ MEDIA
               </h1>
-              <div className="absolute -bottom-[5%] md:-bottom-[15%] right-0 md:-right-[2%] text-2xl md:text-4xl lg:text-5xl font-sans tracking-wide">
+              <div className="absolute -bottom-[15%] md:-bottom-[20%] right-[5%] md:right-[10%] text-6xl md:text-8xl lg:text-9xl font-[family-name:var(--font-great-vibes)] tracking-wide -rotate-2">
                 Maindha
               </div>
             </div>
