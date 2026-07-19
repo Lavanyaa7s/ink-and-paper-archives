@@ -162,14 +162,20 @@ export default function LandingPage() {
         {/* 4.5 PACKAGES & INVESTMENT (Champagne Background) */}
         <section id="packages" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-24">
+            <motion.div 
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+              className="text-center mb-24"
+            >
               <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Investment & Packages</h2>
               <p className="opacity-80 max-w-2xl mx-auto font-medium text-lg">Transparent pricing for premium documentation.</p>
-            </div>
+            </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Package 1 */}
-              <div className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl hover:-translate-y-2 transition-transform duration-300">
+              <motion.div 
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+              >
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Portrait & Lifestyle</h3>
                   <div className="text-4xl font-[family-name:var(--font-yeseva)] mb-8">RM 800<span className="text-sm font-sans opacity-70"> / session</span></div>
@@ -181,10 +187,13 @@ export default function LandingPage() {
                   </ul>
                 </div>
                 <button className="w-full py-4 bg-[#FAFCBE] text-[#92000A] font-extrabold uppercase tracking-widest rounded-lg hover:bg-white transition-colors">Book Session</button>
-              </div>
+              </motion.div>
 
               {/* Package 2 */}
-              <div className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl scale-100 md:scale-105 border-4 border-[#92000A] relative hover:-translate-y-2 transition-transform duration-300 z-10">
+              <motion.div 
+                initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl scale-100 md:scale-105 border-4 border-[#92000A] relative hover:-translate-y-2 transition-transform duration-300 z-10"
+              >
                 <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#FAFCBE] text-[#92000A] px-6 py-1.5 text-sm font-black uppercase tracking-widest rounded-full whitespace-nowrap shadow-xl">Most Popular</div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Wedding & Sacred Vows</h3>
@@ -197,10 +206,13 @@ export default function LandingPage() {
                   </ul>
                 </div>
                 <button className="w-full py-4 bg-[#FAFCBE] text-[#92000A] font-extrabold uppercase tracking-widest rounded-lg hover:bg-white transition-colors">Book Wedding</button>
-              </div>
+              </motion.div>
 
               {/* Package 3 */}
-              <div className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl hover:-translate-y-2 transition-transform duration-300">
+              <motion.div 
+                initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+              >
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Commercial & Auto</h3>
                   <div className="text-4xl font-[family-name:var(--font-yeseva)] mb-8">RM 2,500<span className="text-sm font-sans opacity-70"> / project</span></div>
@@ -212,7 +224,7 @@ export default function LandingPage() {
                   </ul>
                 </div>
                 <button className="w-full py-4 border-2 border-[#FAFCBE] text-[#FAFCBE] font-extrabold uppercase tracking-widest rounded-lg hover:bg-[#FAFCBE] hover:text-[#92000A] transition-colors">Inquire Now</button>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>

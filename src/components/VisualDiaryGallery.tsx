@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
@@ -31,19 +32,30 @@ export default function VisualDiaryGallery() {
     (img) => activeCategory === 'All' || img.category === activeCategory
   );
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
     <section id="gallery" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE] overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10">
+        <motion.div 
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+          className="text-center mb-10"
+        >
           <p className="text-xs font-bold tracking-widest uppercase opacity-70 mb-4">GALLERY</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">My Visual Diary</h2>
           <p className="opacity-80 max-w-md mx-auto font-medium text-lg leading-relaxed">
             See the world through my lens: <br/>adventures in photos and videos
           </p>
-        </div>
+        </motion.div>
 
         {/* Pills Navigation */}
-        <div className="flex flex-wrap justify-center items-center gap-3 mb-16">
+        <motion.div 
+          initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+          className="flex flex-wrap justify-center items-center gap-3 mb-16"
+        >
           {categories.map((cat) => (
             <button
               key={cat}
@@ -60,10 +72,13 @@ export default function VisualDiaryGallery() {
           <button className="px-6 py-2 rounded-full text-sm font-bold border border-[#FAFCBE]/40 text-[#FAFCBE] hover:bg-[#FAFCBE]/10 flex items-center gap-2 transition-colors">
             View More <span>→</span>
           </button>
-        </div>
+        </motion.div>
 
         {/* 3D Swiper */}
-        <div className="w-full relative py-4">
+        <motion.div 
+          initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.4 }} variants={{ hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1 } }}
+          className="w-full relative py-4"
+        >
           <Swiper
             effect={'coverflow'}
             grabCursor={true}
@@ -88,7 +103,7 @@ export default function VisualDiaryGallery() {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
