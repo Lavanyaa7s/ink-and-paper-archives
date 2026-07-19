@@ -62,19 +62,34 @@ export default function LandingPage() {
 
 
           {/* Massive Typography Background */}
-          <div className="absolute top-[45%] md:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-2">
+          <div className="absolute top-[35%] md:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-2">
             <div className="relative inline-block">
-              <h1 className="font-[family-name:var(--font-yeseva)] uppercase text-[14vw] md:text-[11vw] leading-none tracking-tight pr-4 md:pr-10">
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="font-[family-name:var(--font-yeseva)] uppercase text-[14vw] md:text-[11vw] leading-none tracking-tight pr-4 md:pr-10"
+              >
                 MAINZ MEDIA
-              </h1>
-              <div className="absolute -bottom-[10%] md:-bottom-[15%] lg:-bottom-[20%] right-[2%] md:right-[8%] text-xl md:text-2xl lg:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide">
+              </motion.h1>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }} 
+                animate={{ opacity: 1, scale: 1 }} 
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                className="absolute -bottom-[10%] md:-bottom-[15%] lg:-bottom-[20%] right-[2%] md:right-[8%] text-xl md:text-2xl lg:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide"
+              >
                 Maindha
-              </div>
+              </motion.div>
             </div>
           </div>
 
           {/* Foreground Portrait Cutout */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-[70%] md:w-[50%] lg:w-[45%] max-w-[650px] h-[65%] md:h-[75%] z-10 pointer-events-none">
+          <motion.div 
+            initial={{ opacity: 0, y: 100 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-[70%] md:w-[50%] lg:w-[45%] max-w-[650px] h-[65%] md:h-[75%] z-10 pointer-events-none"
+          >
             <Image 
               src="/portfolio/photographer/portraitMaindha.png" 
               alt="Maindha Portrait" 
@@ -82,7 +97,7 @@ export default function LandingPage() {
               className="object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
               priority
             />
-          </div>
+          </motion.div>
         </section>
 
         {/* 3. SOCIAL PROOF (Champagne Background) */}
