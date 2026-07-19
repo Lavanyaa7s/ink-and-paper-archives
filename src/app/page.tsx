@@ -38,7 +38,7 @@ export default function LandingPage() {
       {/* 1. SIMPLE HEADER (Transparent, No Bar) */}
       <header className="absolute top-0 left-0 w-full z-50 px-6 py-8 md:py-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Link href="/" className="font-extrabold text-xl tracking-tight uppercase">
+          <Link href="/" className="font-[family-name:var(--font-yeseva)] text-2xl tracking-wide uppercase">
             MAINZ MEDIA
           </Link>
           <div className="hidden md:flex items-center gap-8 font-medium text-sm">
@@ -64,7 +64,7 @@ export default function LandingPage() {
           {/* Massive Typography Background */}
           <div className="absolute top-[45%] md:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-2">
             <div className="relative inline-block">
-              <h1 className="font-[family-name:var(--font-bodoni)] uppercase text-[14vw] md:text-[11vw] leading-none tracking-tight pr-4 md:pr-10">
+              <h1 className="font-[family-name:var(--font-yeseva)] uppercase text-[14vw] md:text-[11vw] leading-none tracking-tight pr-4 md:pr-10">
                 MAINZ MEDIA
               </h1>
               <div className="absolute -bottom-[20%] md:-bottom-[30%] lg:-bottom-[35%] right-[2%] md:right-[8%] text-3xl md:text-5xl lg:text-6xl font-[family-name:var(--font-great-vibes)] tracking-wide -rotate-2">

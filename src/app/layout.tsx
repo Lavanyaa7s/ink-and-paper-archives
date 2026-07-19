@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Bebas_Neue, Space_Grotesk, JetBrains_Mono, Bodoni_Moda, Great_Vibes } from "next/font/google";
+import { Inter, Bebas_Neue, Space_Grotesk, JetBrains_Mono, Bodoni_Moda, Great_Vibes, Yeseva_One } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 
@@ -41,6 +41,13 @@ const greatVibes = Great_Vibes({
   display: "swap",
 });
 
+const yesevaOne = Yeseva_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-yeseva",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Mainz Media | Premium Cinematic Photography — Malaysia",
   description:
@@ -76,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${bebasNeue.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${bodoni.variable} ${greatVibes.variable}`}
+      className={`${inter.variable} ${bebasNeue.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${bodoni.variable} ${greatVibes.variable} ${yesevaOne.variable}`}
     >
       <body className="min-h-screen bg-background text-foreground antialiased">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
