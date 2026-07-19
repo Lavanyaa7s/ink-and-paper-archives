@@ -4,85 +4,101 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+const services = [
+  {
+    title: 'Weddings & Vows',
+    description: 'Documenting your most sacred day with an editorial, fly-on-the-wall approach.',
+    image: '/portfolio/events/event-03.jpg',
+  },
+  {
+    title: 'Automotive',
+    description: 'Precision rig lighting and dusk circuit documentation for high-performance machines.',
+    image: '/portfolio/automotive/auto-01.jpg',
+  },
+  {
+    title: 'Commercial',
+    description: 'High-impact interior and architectural photography for luxury lookbooks.',
+    image: '/portfolio/featured/featured-03.jpg',
+  },
+  {
+    title: 'Fine Art Portraiture',
+    description: 'Stylized, cinematic portraits designed to capture authentic emotional resonance.',
+    image: '/portfolio/portrait/portrait-01.jpg',
+  },
+  {
+    title: 'Corporate Events',
+    description: 'Professional documentation for summits, product launches, and company milestones.',
+    image: '/portfolio/events/event-06.jpg',
+  },
+  {
+    title: 'Motorsports',
+    description: 'Raw, aerodynamic aggression captured at the apex of the circuit.',
+    image: '/portfolio/automotive/auto-04.jpg',
+  },
+  {
+    title: 'Fashion & Editorial',
+    description: 'Vanguard aesthetics engineered for international magazine spreads and campaigns.',
+    image: '/portfolio/portrait/portrait-04.jpg',
+  },
+  {
+    title: 'Lifestyle',
+    description: 'Natural, organic storytelling that highlights the beauty of everyday moments.',
+    image: '/portfolio/events/event-10.jpg',
+  },
+];
+
 export default function ServicesSection() {
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    visible: { opacity: 1, y: 0 }
   };
 
   return (
     <section id="services" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A] overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[1400px] mx-auto">
         <motion.div 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          className="text-center mb-20"
+          initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.6 }} variants={fadeUp}
+          className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Master Disciplines</h2>
           <p className="opacity-80 max-w-2xl mx-auto font-medium text-lg">Specialized production suites tailored to your exact narrative needs.</p>
         </motion.div>
 
-        {/* Block 1 */}
-        <motion.div 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24"
-        >
-          <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#92000A]/20 order-2 md:order-1 shadow-xl">
-            <Image src="/portfolio/events/event-03.jpg" alt="Weddings" fill className="object-cover" />
-          </div>
-          <div className="order-1 md:order-2">
-            <h3 className="text-3xl font-bold mb-4">Weddings & Sacred Vows</h3>
-            <p className="opacity-80 mb-6 leading-relaxed">
-              We document your most sacred day with an editorial, fly-on-the-wall approach. From rain-soaked vows to the final dance, we preserve the authentic resonance of your celebration.
-            </p>
-            <ul className="space-y-3 opacity-90 font-medium">
-              <li className="flex items-center gap-2">✓ Full Day Coverage</li>
-              <li className="flex items-center gap-2">✓ Heirloom Print Albums</li>
-              <li className="flex items-center gap-2">✓ High-Res Digital Archive</li>
-            </ul>
-          </div>
-        </motion.div>
+        {/* 4-Column Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {services.map((service, index) => (
+            <motion.div 
+              key={service.title}
+              initial="hidden" 
+              whileInView="visible" 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.5, delay: index * 0.1 }} 
+              variants={fadeUp}
+              className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              {/* Image Container */}
+              <div className="w-full aspect-[4/3] relative rounded-2xl overflow-hidden mb-6">
+                <Image 
+                  src={service.image} 
+                  alt={service.title} 
+                  fill 
+                  className="object-cover transition-transform duration-700 hover:scale-105" 
+                />
+              </div>
 
-        {/* Block 2 */}
-        <motion.div 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24"
-        >
-          <div className="order-1">
-            <h3 className="text-3xl font-bold mb-4">Automotive Engineering</h3>
-            <p className="opacity-80 mb-6 leading-relaxed">
-              Precision rig lighting, dusk circuit documentation, and dynamic panning shots. We capture the raw aerodynamic aggression and engineering beauty of high-performance machines.
-            </p>
-            <ul className="space-y-3 opacity-90 font-medium">
-              <li className="flex items-center gap-2">✓ Twilight & Night Sessions</li>
-              <li className="flex items-center gap-2">✓ Rig & Motion Blur Plates</li>
-              <li className="flex items-center gap-2">✓ Private Garage Documentation</li>
-            </ul>
-          </div>
-          <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#92000A]/20 order-2 shadow-xl">
-            <Image src="/portfolio/automotive/auto-01.jpg" alt="Automotive" fill className="object-cover" />
-          </div>
-        </motion.div>
+              {/* Text Content */}
+              <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
+              <p className="text-sm text-gray-500 italic mb-8 flex-grow leading-relaxed">
+                {service.description}
+              </p>
 
-        {/* Block 3 */}
-        <motion.div 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-        >
-          <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#92000A]/20 order-2 md:order-1 shadow-xl">
-            <Image src="/portfolio/featured/featured-03.jpg" alt="Commercial" fill className="object-cover" />
-          </div>
-          <div className="order-1 md:order-2">
-            <h3 className="text-3xl font-bold mb-4">Commercial Architecture</h3>
-            <p className="opacity-80 mb-6 leading-relaxed">
-              Elevate your brand with high-impact interior and architectural photography. Engineered for luxury lookbooks, hotel portfolios, and international marketing campaigns.
-            </p>
-            <ul className="space-y-3 opacity-90 font-medium">
-              <li className="flex items-center gap-2">✓ Tilt-Shift Perspective Control</li>
-              <li className="flex items-center gap-2">✓ Advanced Composite Lighting</li>
-              <li className="flex items-center gap-2">✓ Commercial Usage Licensing</li>
-            </ul>
-          </div>
-        </motion.div>
+              {/* MORE Link */}
+              <button className="text-xs font-bold tracking-widest text-gray-800 uppercase border-b-2 border-gray-400 pb-1 hover:border-gray-900 transition-colors mt-auto">
+                MORE
+              </button>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
