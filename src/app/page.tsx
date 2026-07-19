@@ -49,7 +49,7 @@ export default function LandingPage() {
             <Link href="#faq" className="hover:opacity-70 transition-opacity">FAQ</Link>
           </div>
           <Link 
-            href="/booking" 
+            href="#booking" 
             className="bg-[#FAFCBE] text-[#92000A] px-6 py-2 rounded-md font-bold text-sm hover:bg-white transition-colors shadow-lg"
           >
             BOOK NOW
@@ -335,7 +335,7 @@ export default function LandingPage() {
         </section>
 
         {/* 8. ADDITIONAL CALL-TO-ACTION (Sangria Background) */}
-        <section className="py-32 px-6 bg-[#92000A] text-[#FAFCBE]">
+        <section id="booking" className="py-32 px-6 bg-[#92000A] text-[#FAFCBE]">
           <div className="max-w-4xl mx-auto text-center bg-[#92000A] text-[#FAFCBE] rounded-2xl p-12 md:p-20 shadow-2xl border border-[#92000A]/20">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Ready to immortalize your legacy?
@@ -343,12 +343,12 @@ export default function LandingPage() {
             <p className="text-lg opacity-90 mb-10 max-w-2xl mx-auto font-medium">
               Our calendar for 2025/2026 is filling up fast. Reach out today to secure your date and discuss your vision.
             </p>
-            <Link 
-              href="/booking" 
-              className="bg-[#FAFCBE] text-[#92000A] px-10 py-5 rounded-md font-bold text-lg hover:bg-black hover:text-[#92000A] transition-colors inline-block shadow-lg"
+            <a 
+              href="mailto:maindha@gmail.com" 
+              className="bg-[#FAFCBE] text-[#92000A] px-10 py-5 rounded-md font-bold text-lg hover:bg-black hover:text-[#FAFCBE] transition-colors inline-block shadow-lg"
             >
               BOOK YOUR SESSION NOW
-            </Link>
+            </a>
           </div>
         </section>
       </main>
