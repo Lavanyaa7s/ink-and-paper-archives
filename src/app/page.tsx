@@ -35,8 +35,8 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#92000A] text-[#FAFCBE] font-sans selection:bg-[#FAFCBE] selection:text-[#92000A]">
       
-      {/* 1. SIMPLE & STICKY HEADER */}
-      <header className="sticky top-0 z-50 w-full bg-[#92000A]/95 backdrop-blur-md border-b border-[#FAFCBE]/10 px-6 py-4">
+      {/* 1. SIMPLE & STICKY HEADER (Sangria Background) */}
+      <header className="sticky top-0 z-50 w-full bg-[#92000A]/95 backdrop-blur-md border-b border-[#FAFCBE]/20 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/" className="font-extrabold text-xl tracking-tight uppercase">
             MAINZ MEDIA
@@ -56,8 +56,8 @@ export default function LandingPage() {
       </header>
 
       <main>
-        {/* 2. VALUE PROPOSITION & MAIN OFFER (Hero) */}
-        <section className="px-6 py-20 md:py-32">
+        {/* 2. VALUE PROPOSITION & MAIN OFFER (Hero - Sangria Background) */}
+        <section className="px-6 py-20 md:py-32 bg-[#92000A] text-[#FAFCBE]">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div 
               initial="hidden" animate="visible" variants={fadeUp}
@@ -66,7 +66,7 @@ export default function LandingPage() {
               <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
                 Cinematic Emotion, Immortalized in Light.
               </h1>
-              <p className="text-lg opacity-80 mb-8 max-w-lg leading-relaxed">
+              <p className="text-lg opacity-90 mb-8 max-w-lg leading-relaxed">
                 Malaysia’s premier photography studio for unscripted weddings, architectural commerce, and high-performance automotive. We transform fleeting seconds into enduring visual legacies.
               </p>
               <Link 
@@ -85,25 +85,24 @@ export default function LandingPage() {
             >
               <Image 
                 src="/portraitMaindha.png" 
-                alt="Maindha Portrait" 
+                alt="Mainz Media Photography" 
                 fill 
-                className="object-contain object-bottom drop-shadow-2xl"
+                className="object-contain object-bottom drop-shadow-2xl bg-[#92000A]"
                 priority
               />
             </motion.div>
           </div>
         </section>
 
-        {/* 3. SOCIAL PROOF */}
-        <section className="bg-[#FAFCBE]/5 border-y border-[#FAFCBE]/10 py-10 px-6">
+        {/* 3. SOCIAL PROOF (Champagne Background) */}
+        <section className="bg-[#FAFCBE] text-[#92000A] py-12 px-6">
           <div className="max-w-6xl mx-auto flex flex-col items-center">
-            <p className="text-sm font-bold tracking-widest uppercase opacity-60 mb-6">
+            <p className="text-sm font-bold tracking-widest uppercase opacity-70 mb-6">
               Trusted by 50+ High-Net-Worth Clients & Brands
             </p>
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-80">
-              {/* Star Rating Representation */}
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
               <div className="flex items-center gap-2">
-                <div className="flex text-[#FAFCBE] text-xl">★★★★★</div>
+                <div className="flex text-[#92000A] text-xl">★★★★★</div>
                 <span className="font-bold">5.0 / 5.0</span>
               </div>
               <div className="text-lg font-bold uppercase tracking-wider">Vogue MY</div>
@@ -113,54 +112,56 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* 4. BENEFITS & ADVANTAGES */}
-        <section className="py-24 px-6 max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Choose Mainz Media?</h2>
-            <p className="opacity-80 max-w-2xl mx-auto">We don't just take pictures; we engineer physical memories that appreciate in emotional value over time.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              {
-                title: "Heirloom Quality",
-                desc: "Every plate is developed with strict color science to ensure your images look as striking in 50 years as they do today."
-              },
-              {
-                title: "Unobtrusive Approach",
-                desc: "We blend into the background, capturing raw, unscripted moments without forcing awkward or artificial poses."
-              },
-              {
-                title: "Lightning Delivery",
-                desc: "Receive a curated sneak peek gallery within 48 hours, so you can share your monumental moments immediately."
-              }
-            ].map((benefit, i) => (
-              <motion.div 
-                key={i}
-                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                className="bg-[#FAFCBE]/5 p-8 rounded-xl border border-[#FAFCBE]/10 text-center"
-              >
-                <div className="w-12 h-12 rounded-full bg-[#FAFCBE] text-[#92000A] flex items-center justify-center mx-auto mb-6 text-xl font-bold">
-                  {i + 1}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                <p className="opacity-70 leading-relaxed text-sm">{benefit.desc}</p>
-              </motion.div>
-            ))}
+        {/* 4. BENEFITS & ADVANTAGES (Sangria Background) */}
+        <section className="py-24 px-6 bg-[#92000A] text-[#FAFCBE]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Why Choose Mainz Media?</h2>
+              <p className="opacity-90 max-w-2xl mx-auto">We don't just take pictures; we engineer physical memories that appreciate in emotional value over time.</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {[
+                {
+                  title: "Heirloom Quality",
+                  desc: "Every plate is developed with strict color science to ensure your images look as striking in 50 years as they do today."
+                },
+                {
+                  title: "Unobtrusive Approach",
+                  desc: "We blend into the background, capturing raw, unscripted moments without forcing awkward or artificial poses."
+                },
+                {
+                  title: "Lightning Delivery",
+                  desc: "Receive a curated sneak peek gallery within 48 hours, so you can share your monumental moments immediately."
+                }
+              ].map((benefit, i) => (
+                <motion.div 
+                  key={i}
+                  initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                  className="bg-[#FAFCBE]/10 p-8 rounded-xl border border-[#FAFCBE]/20 text-center"
+                >
+                  <div className="w-12 h-12 rounded-full bg-[#FAFCBE] text-[#92000A] flex items-center justify-center mx-auto mb-6 text-xl font-bold">
+                    {i + 1}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
+                  <p className="opacity-80 leading-relaxed text-sm">{benefit.desc}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* 5. PRODUCT SERVICE OR FEATURES (Alternating Blocks) */}
-        <section id="services" className="py-24 px-6 bg-[#FAFCBE]/5 border-y border-[#FAFCBE]/10">
+        {/* 5. PRODUCT SERVICE OR FEATURES (Champagne Background) */}
+        <section id="services" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
               <h2 className="text-4xl font-bold mb-4">Master Disciplines</h2>
               <p className="opacity-80 max-w-2xl mx-auto">Specialized production suites tailored to your exact narrative needs.</p>
             </div>
 
-            {/* Block 1: Image Left, Text Right */}
+            {/* Block 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2 md:order-1">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#92000A]/20 order-2 md:order-1 shadow-xl">
                 <Image src="/portfolio/events/event-03.jpg" alt="Weddings" fill className="object-cover" />
               </div>
               <div className="order-1 md:order-2">
@@ -168,7 +169,7 @@ export default function LandingPage() {
                 <p className="opacity-80 mb-6 leading-relaxed">
                   We document your most sacred day with an editorial, fly-on-the-wall approach. From rain-soaked vows to the final dance, we preserve the authentic resonance of your celebration.
                 </p>
-                <ul className="space-y-3 opacity-90 mb-8">
+                <ul className="space-y-3 opacity-90 font-medium">
                   <li className="flex items-center gap-2">✓ Full Day Coverage</li>
                   <li className="flex items-center gap-2">✓ Heirloom Print Albums</li>
                   <li className="flex items-center gap-2">✓ High-Res Digital Archive</li>
@@ -176,27 +177,27 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Block 2: Text Left, Image Right */}
+            {/* Block 2 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
               <div className="order-1">
                 <h3 className="text-3xl font-bold mb-4">Automotive Engineering</h3>
                 <p className="opacity-80 mb-6 leading-relaxed">
                   Precision rig lighting, dusk circuit documentation, and dynamic panning shots. We capture the raw aerodynamic aggression and engineering beauty of high-performance machines.
                 </p>
-                <ul className="space-y-3 opacity-90 mb-8">
+                <ul className="space-y-3 opacity-90 font-medium">
                   <li className="flex items-center gap-2">✓ Twilight & Night Sessions</li>
                   <li className="flex items-center gap-2">✓ Rig & Motion Blur Plates</li>
                   <li className="flex items-center gap-2">✓ Private Garage Documentation</li>
                 </ul>
               </div>
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#92000A]/20 order-2 shadow-xl">
                 <Image src="/portfolio/automotive/auto-01.jpg" alt="Automotive" fill className="object-cover" />
               </div>
             </div>
 
-            {/* Block 3: Image Left, Text Right */}
+            {/* Block 3 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2 md:order-1">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#92000A]/20 order-2 md:order-1 shadow-xl">
                 <Image src="/portfolio/featured/featured-03.jpg" alt="Commercial" fill className="object-cover" />
               </div>
               <div className="order-1 md:order-2">
@@ -204,7 +205,7 @@ export default function LandingPage() {
                 <p className="opacity-80 mb-6 leading-relaxed">
                   Elevate your brand with high-impact interior and architectural photography. Engineered for luxury lookbooks, hotel portfolios, and international marketing campaigns.
                 </p>
-                <ul className="space-y-3 opacity-90 mb-8">
+                <ul className="space-y-3 opacity-90 font-medium">
                   <li className="flex items-center gap-2">✓ Tilt-Shift Perspective Control</li>
                   <li className="flex items-center gap-2">✓ Advanced Composite Lighting</li>
                   <li className="flex items-center gap-2">✓ Commercial Usage Licensing</li>
@@ -214,47 +215,49 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* 6. TESTIMONIALS */}
-        <section id="testimonials" className="py-24 px-6 max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Client Experiences</h2>
-            <p className="opacity-80 max-w-2xl mx-auto">Don't just take our word for it.</p>
-          </div>
+        {/* 6. TESTIMONIALS (Sangria Background) */}
+        <section id="testimonials" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Client Experiences</h2>
+              <p className="opacity-90 max-w-2xl mx-auto">Don't just take our word for it.</p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "Mainz Media completely blew us away. They managed to capture moments we didn't even realize happened. The final gallery felt like a cinematic movie of our wedding day.",
-                name: "Sarah & Daniel",
-                tag: "Wedding Clients"
-              },
-              {
-                quote: "The automotive shoot was incredible. They understood exactly how to light the curves of the car at dusk. The motion shots are currently hanging in my office.",
-                name: "Ahmad R.",
-                tag: "Automotive Collector"
-              },
-              {
-                quote: "Professional, punctual, and highly creative. They elevated our brand's visual identity overnight with their architectural shots. Highly recommended for commercial work.",
-                name: "Elena W.",
-                tag: "Creative Director"
-              }
-            ].map((test, i) => (
-              <div key={i} className="bg-[#FAFCBE] text-[#92000A] p-8 rounded-xl flex flex-col justify-between">
-                <div>
-                  <div className="text-2xl mb-4">★★★★★</div>
-                  <p className="text-sm font-medium leading-relaxed italic mb-8">"{test.quote}"</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  quote: "Mainz Media completely blew us away. They managed to capture moments we didn't even realize happened. The final gallery felt like a cinematic movie of our wedding day.",
+                  name: "Sarah & Daniel",
+                  tag: "Wedding Clients"
+                },
+                {
+                  quote: "The automotive shoot was incredible. They understood exactly how to light the curves of the car at dusk. The motion shots are currently hanging in my office.",
+                  name: "Ahmad R.",
+                  tag: "Automotive Collector"
+                },
+                {
+                  quote: "Professional, punctual, and highly creative. They elevated our brand's visual identity overnight with their architectural shots. Highly recommended for commercial work.",
+                  name: "Elena W.",
+                  tag: "Creative Director"
+                }
+              ].map((test, i) => (
+                <div key={i} className="bg-[#FAFCBE] text-[#92000A] p-8 rounded-xl flex flex-col justify-between shadow-xl">
+                  <div>
+                    <div className="text-2xl mb-4 text-[#92000A]">★★★★★</div>
+                    <p className="text-sm font-medium leading-relaxed italic mb-8">"{test.quote}"</p>
+                  </div>
+                  <div>
+                    <p className="font-bold">{test.name}</p>
+                    <p className="text-xs opacity-70">{test.tag}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-bold">{test.name}</p>
-                  <p className="text-xs opacity-70">{test.tag}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* 7. OBJECTION HANDLING (FAQS) */}
-        <section id="faq" className="py-24 px-6 bg-[#FAFCBE]/5 border-y border-[#FAFCBE]/10">
+        {/* 7. OBJECTION HANDLING (FAQS) (Champagne Background) */}
+        <section id="faq" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
@@ -263,10 +266,10 @@ export default function LandingPage() {
 
             <div className="space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="border border-[#FAFCBE]/20 rounded-lg overflow-hidden bg-[#92000A]">
+                <div key={i} className="border border-[#92000A]/30 rounded-lg overflow-hidden bg-transparent">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-[#FAFCBE]/5 transition-colors"
+                    className="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-[#92000A]/5 transition-colors"
                   >
                     <span>{faq.question}</span>
                     <span className="text-2xl font-light">{openFaq === i ? '−' : '+'}</span>
@@ -279,7 +282,7 @@ export default function LandingPage() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-5 pt-1 text-sm opacity-80 leading-relaxed border-t border-[#FAFCBE]/10">
+                        <div className="px-6 pb-5 pt-1 text-sm opacity-80 leading-relaxed border-t border-[#92000A]/10">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -291,18 +294,18 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* 8. ADDITIONAL CALL-TO-ACTION */}
-        <section className="py-32 px-6">
-          <div className="max-w-4xl mx-auto text-center bg-[#FAFCBE] text-[#92000A] rounded-2xl p-12 md:p-20 shadow-2xl">
+        {/* 8. ADDITIONAL CALL-TO-ACTION (Sangria Background) */}
+        <section className="py-32 px-6 bg-[#92000A] text-[#FAFCBE]">
+          <div className="max-w-4xl mx-auto text-center bg-[#FAFCBE] text-[#92000A] rounded-2xl p-12 md:p-20 shadow-2xl border border-[#FAFCBE]/20">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Ready to immortalize your legacy?
             </h2>
-            <p className="text-lg opacity-80 mb-10 max-w-2xl mx-auto">
+            <p className="text-lg opacity-90 mb-10 max-w-2xl mx-auto font-medium">
               Our calendar for 2025/2026 is filling up fast. Reach out today to secure your date and discuss your vision.
             </p>
             <Link 
               href="/booking" 
-              className="bg-[#92000A] text-[#FAFCBE] px-10 py-5 rounded-md font-bold text-lg hover:bg-black transition-colors inline-block shadow-lg"
+              className="bg-[#92000A] text-[#FAFCBE] px-10 py-5 rounded-md font-bold text-lg hover:bg-black hover:text-[#FAFCBE] transition-colors inline-block shadow-lg"
             >
               BOOK YOUR SESSION NOW
             </Link>
@@ -310,20 +313,20 @@ export default function LandingPage() {
         </section>
       </main>
 
-      {/* 9. SIMPLE FOOTER */}
-      <footer className="border-t border-[#FAFCBE]/10 py-12 px-6 bg-[#92000A]">
+      {/* 9. SIMPLE FOOTER (Champagne Background for visual closure) */}
+      <footer className="border-t border-[#92000A]/10 py-12 px-6 bg-[#FAFCBE] text-[#92000A]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="font-extrabold text-xl tracking-tight uppercase">
             MAINZ MEDIA
           </div>
           
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm opacity-80">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm font-medium opacity-80">
             <a href="mailto:maindha@gmail.com" className="hover:opacity-100 transition-opacity">maindha@gmail.com</a>
             <a href="tel:+60163228337" className="hover:opacity-100 transition-opacity">+60 16-322 8337</a>
             <span>Kuala Lumpur, Malaysia</span>
           </div>
 
-          <div className="text-xs opacity-60">
+          <div className="text-xs font-bold opacity-70">
             © {new Date().getFullYear()} Mainz Media. All rights reserved.
           </div>
         </div>
