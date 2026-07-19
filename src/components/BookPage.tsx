@@ -28,59 +28,40 @@ export function BookPage({ chapter, chapterTitle, page, next, prev, children }: 
         animate={{ opacity: ready ? 1 : 0, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.98 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="relative min-h-screen bg-[#08080A] text-[#F3F4F6] overflow-hidden select-none font-sans"
+        className="relative min-h-screen bg-[#1A1A00] text-[#FFFFCC] overflow-hidden select-none font-sans selection:bg-[#FFFFCC] selection:text-[#1A1A00]"
       >
-        {/* Subtle Ambient Studio Glows */}
-        <div className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] bg-amber-500/[0.04] rounded-full blur-[140px]" />
-        <div className="pointer-events-none absolute top-1/2 -right-40 w-[600px] h-[600px] bg-rose-600/[0.04] rounded-full blur-[160px]" />
-
-        {/* Floating Glassmorphic Studio Navigation Header */}
-        <header className="fixed top-6 inset-x-6 md:inset-x-12 z-50 pointer-events-none">
-          <div className="max-w-7xl mx-auto pointer-events-auto bg-neutral-900/80 backdrop-blur-2xl border border-white/12 rounded-full px-6 py-4 flex items-center justify-between shadow-2xl">
-            <Link
-              href="/"
-              className="group flex items-center gap-3.5 font-extrabold tracking-tight text-white hover:text-amber-400 transition-colors"
-            >
-              <span className="flex h-2.5 w-2.5 rounded-full bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.8)] animate-pulse" />
-              <span className="text-base sm:text-lg tracking-wide uppercase font-sans font-bold">MAINZ MEDIA</span>
-              <span className="hidden sm:inline-block h-3 w-px bg-white/20" />
-              <span className="hidden sm:inline-block text-[10px] uppercase font-mono tracking-widest text-amber-300/80">
-                STUDIO PRODUCTION SUITE
-              </span>
+        {/* Simple & Sticky Header Equivalent for Subpages */}
+        <header className="sticky top-0 z-50 w-full bg-[#1A1A00]/95 backdrop-blur-md border-b border-[#FFFFCC]/10 px-6 py-4">
+          <div className="max-w-6xl mx-auto flex items-center justify-between">
+            <Link href="/" className="font-extrabold text-xl tracking-tight uppercase flex items-center gap-2 hover:opacity-70 transition-opacity">
+              <span>←</span>
+              <span>MAINZ MEDIA</span>
             </Link>
 
-            <div className="flex items-center gap-6 font-mono text-xs uppercase tracking-widest">
-              <div className="hidden md:flex items-center gap-2 text-gray-400">
-                <span className="text-amber-400 font-bold">{chapter}</span>
-                <span>—</span>
-                <span className="text-white">{chapterTitle}</span>
-              </div>
-              <Link
-                href="/"
-                className="px-4 py-1.5 rounded-full bg-white/10 hover:bg-amber-400 hover:text-black text-white text-[11px] font-bold transition-all"
-              >
-                ← RETURN TO SUITE
-              </Link>
+            <div className="hidden md:flex items-center gap-4 text-sm font-bold opacity-80 uppercase tracking-widest">
+              <span>{chapter}</span>
+              <span>—</span>
+              <span>{chapterTitle}</span>
             </div>
           </div>
         </header>
 
         {/* Content Area */}
-        <main className="relative z-10 px-6 pt-36 pb-44 md:px-20 md:pt-44 md:pb-52 max-w-7xl mx-auto">
+        <main className="relative z-10 px-6 pt-16 pb-32 md:px-20 md:pt-24 md:pb-44 max-w-6xl mx-auto">
           {children}
         </main>
 
-        {/* Floating Glass Footer Navigation */}
-        <footer className="fixed bottom-6 inset-x-6 md:inset-x-12 z-50 pointer-events-none">
-          <div className="max-w-7xl mx-auto pointer-events-auto bg-neutral-900/80 backdrop-blur-2xl border border-white/12 rounded-full px-6 py-4 flex items-center justify-between shadow-2xl font-mono text-xs font-bold uppercase tracking-widest">
-            <div className="text-amber-400/90 font-bold">
-              <span>✦ {page}</span>
+        {/* Simple Footer Navigation for Subpages */}
+        <footer className="fixed bottom-0 inset-x-0 z-50 border-t border-[#FFFFCC]/10 bg-[#1A1A00]/95 backdrop-blur-md px-6 py-4">
+          <div className="max-w-6xl mx-auto flex items-center justify-between font-bold text-sm uppercase tracking-widest">
+            <div className="opacity-80">
+              {page}
             </div>
             <div className="flex items-center gap-6 md:gap-10">
               {prev && (
                 <Link
                   href={prev.to}
-                  className="text-gray-300 hover:text-amber-400 transition-colors flex items-center gap-2"
+                  className="hover:opacity-60 transition-opacity flex items-center gap-2"
                 >
                   <span>←</span>
                   <span>{prev.label}</span>
@@ -89,7 +70,7 @@ export function BookPage({ chapter, chapterTitle, page, next, prev, children }: 
               {next && (
                 <Link
                   href={next.to}
-                  className="text-gray-300 hover:text-amber-400 transition-colors flex items-center gap-2"
+                  className="hover:opacity-60 transition-opacity flex items-center gap-2"
                 >
                   <span>{next.label}</span>
                   <span>→</span>

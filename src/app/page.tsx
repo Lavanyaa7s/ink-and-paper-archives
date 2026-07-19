@@ -1,565 +1,334 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
-interface StudioPlate {
-  id: string;
-  title: string;
-  category: "automotive" | "weddings" | "portraits" | "commercial";
-  location: string;
-  year: string;
-  src: string;
-  specs: string;
-  desc: string;
-}
+export default function LandingPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-const masterPlates: StudioPlate[] = [
-  {
-    id: "auto-plate-01",
-    title: "TWILIGHT CIRCUIT SYMMETRY",
-    category: "automotive",
-    location: "SEPANG INTERNATIONAL CIRCUIT, MY",
-    year: "2024",
-    src: "/portfolio/automotive/automotive-01.jpg",
-    specs: "35MM ANAMORPHIC · f/1.4 · 1/2000s · ISO 100",
-    desc: "High-speed circuit documentation capturing the raw aerodynamic curves and dusk reflections of high-performance engineering under floodlights.",
-  },
-  {
-    id: "wedding-plate-01",
-    title: "RAIN-SOAKED SACRED VOWS",
-    category: "weddings",
-    location: "PENANG HERITAGE HALL, MY",
-    year: "2024",
-    src: "/portfolio/wedding/wedding-01.jpg",
-    specs: "50MM LEICA M · f/1.2 · 1/1000s · ISO 160",
-    desc: "Unscripted documentary coverage of a rain-drenched ceremony where every teardrop, vow, and familial embrace is preserved with heirloom celluloid warmth.",
-  },
-  {
-    id: "portrait-plate-01",
-    title: "MONOCHROME CHARACTER STUDY",
-    category: "portraits",
-    location: "KUALA LUMPUR STUDIO, MY",
-    year: "2024",
-    src: "/portfolio/portrait/portrait-01.jpg",
-    specs: "85MM CINEMA PRIME · f/1.8 · 1/500s · ISO 200",
-    desc: "A quiet, unhurried studio study where natural side-lighting sculpts authentic character with zero forced posing or flash.",
-  },
-  {
-    id: "commercial-plate-01",
-    title: "ARCHITECTURAL MINIMALISM",
-    category: "commercial",
-    location: "BUKIT BINTANG LUXURY SUITE, MY",
-    year: "2024",
-    src: "/portfolio/commercial/commercial-01.jpg",
-    specs: "24MM TILT-SHIFT · f/8.0 · 1/125s · ISO 100",
-    desc: "Bespoke interior architecture emphasizing clean geometric shadow lines, bespoke stone textures, and luxury lookbook storytelling.",
-  },
-  {
-    id: "auto-plate-02",
-    title: "MIDNIGHT WORKSHOP CHRONICLES",
-    category: "automotive",
-    location: "PETALING JAYA GARAGE, MY",
-    year: "2024",
-    src: "/portfolio/automotive/automotive-02.jpg",
-    specs: "50MM PRIME · f/1.4 · 1/500s · ISO 400",
-    desc: "Intimate late-night restoration documentation capturing welding sparks and mechanical craftsmanship at 2 AM.",
-  },
-  {
-    id: "portrait-plate-02",
-    title: "THE SILENT OBSERVER",
-    category: "portraits",
-    location: "BANGSAR SOUTH STUDIO, MY",
-    year: "2024",
-    src: "/portfolio/portrait/portrait-02.jpg",
-    specs: "105MM TELEPHOTO · f/2.0 · 1/800s · ISO 100",
-    desc: "Atmospheric shadow play isolating the quietest emotional resonance between spoken words.",
-  },
-];
+  const faqs = [
+    {
+      question: "How long does it take to receive our final photographs?",
+      answer: "We typically deliver the full digital gallery within 4 to 6 weeks. A sneak peek gallery of 20-30 highlights will be provided within 48 hours of your event.",
+    },
+    {
+      question: "Do you travel for out-of-state or international commissions?",
+      answer: "Yes, we frequently travel for destination weddings and commercial shoots. Travel fees are calculated based on location and accommodation requirements.",
+    },
+    {
+      question: "What is your booking process and deposit requirement?",
+      answer: "To secure your date, we require a signed contract and a 50% non-refundable retainer. The remaining balance is due 14 days before the event.",
+    },
+    {
+      question: "Do you provide videography services as well?",
+      answer: "We specialize exclusively in still photography to maintain our high standard of quality. However, we have a trusted network of cinematographers we frequently work alongside.",
+    }
+  ];
 
-const bentoDisciplines = [
-  {
-    title: "AUTOMOTIVE SERIES",
-    subtitle: "MACHINE & CIRCUIT ENGINEERING",
-    desc: "Precision twilight rig lighting, circuit speed motion plates, and bespoke automotive documentation engineered for international brand monographs.",
-    slug: "/automotive",
-    img: "/portfolio/automotive/automotive-01.jpg",
-    span: "col-span-12 lg:col-span-8 row-span-2",
-  },
-  {
-    title: "WEDDINGS & SACRED VOWS",
-    subtitle: "HEIRLOOM DOCUMENTARY",
-    desc: "Unobtrusive documentary coverage preserving raw tears, rain-soaked vows, and unscripted pure joy.",
-    slug: "/weddings",
-    img: "/portfolio/wedding/wedding-01.jpg",
-    span: "col-span-12 sm:col-span-6 lg:col-span-4",
-  },
-  {
-    title: "EDITORIAL PORTRAITURE",
-    subtitle: "CHARACTER & LIGHT",
-    desc: "Monochrome character studies and natural light studio mastery stripped of artificial modifiers.",
-    slug: "/portraits",
-    img: "/portfolio/portrait/portrait-01.jpg",
-    span: "col-span-12 sm:col-span-6 lg:col-span-4",
-  },
-  {
-    title: "COMMERCIAL & BRAND SUITE",
-    subtitle: "ARCHITECTURE & LOOKBOOKS",
-    desc: "High-impact luxury interior architecture, hotel lookbooks, and brand narratives for global campaigns.",
-    slug: "/commercial",
-    img: "/portfolio/commercial/commercial-01.jpg",
-    span: "col-span-12 lg:col-span-8",
-  },
-];
-
-export default function Home() {
-  const [activeFilter, setActiveFilter] = useState<string>("all");
-  const [selectedPlate, setSelectedPlate] = useState<StudioPlate | null>(null);
-
-  const filteredPlates =
-    activeFilter === "all"
-      ? masterPlates
-      : masterPlates.filter((p) => p.category === activeFilter);
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
 
   return (
-    <div className="relative min-h-screen bg-[#08080A] text-[#F3F4F6] selection:bg-amber-400 selection:text-black font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-[#1A1A00] text-[#FFFFCC] font-sans selection:bg-[#FFFFCC] selection:text-[#1A1A00]">
       
-      {/* =========================================================================
-          AMBIENT OBSIDIAN & GOLD RADIAL STUDIO LIGHTING (Atmosphere Engine)
-          ========================================================================= */}
-      <div className="pointer-events-none fixed top-0 left-1/4 w-[800px] h-[800px] bg-amber-500/[0.05] rounded-full blur-[160px] -z-10" />
-      <div className="pointer-events-none fixed top-1/3 right-10 w-[700px] h-[700px] bg-rose-600/[0.04] rounded-full blur-[180px] -z-10" />
-      <div className="pointer-events-none fixed bottom-10 left-1/3 w-[900px] h-[900px] bg-amber-500/[0.03] rounded-full blur-[200px] -z-10" />
-
-      {/* =========================================================================
-          FLOATING GLASS STUDIO NAVIGATION PILL (Sticky Top Header)
-          ========================================================================= */}
-      <header className="sticky top-6 inset-x-0 z-50 px-6 md:px-12 flex justify-center pointer-events-none">
-        <nav className="pointer-events-auto bg-neutral-900/85 backdrop-blur-2xl border border-white/12 rounded-full px-6 py-3.5 md:px-8 max-w-5xl w-full flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-          <Link href="/" className="group flex items-center gap-3.5 cursor-pointer">
-            <span className="flex h-2.5 w-2.5 rounded-full bg-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.9)] animate-pulse" />
-            <span className="text-base sm:text-lg font-extrabold tracking-tight uppercase text-white group-hover:text-amber-400 transition-colors">
-              MAINZ MEDIA
-            </span>
-            <span className="hidden sm:inline-block h-3 w-px bg-white/20" />
-            <span className="hidden sm:inline-block text-[10px] font-mono tracking-[0.2em] text-amber-300/80 uppercase">
-              STUDIO PRODUCTION SUITE
-            </span>
+      {/* 1. SIMPLE & STICKY HEADER */}
+      <header className="sticky top-0 z-50 w-full bg-[#1A1A00]/95 backdrop-blur-md border-b border-[#FFFFCC]/10 px-6 py-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <Link href="/" className="font-extrabold text-xl tracking-tight uppercase">
+            MAINZ MEDIA
           </Link>
-
-          <div className="flex items-center gap-6 md:gap-8 font-mono text-xs font-bold uppercase tracking-widest">
-            <Link href="#showroom" className="text-gray-300 hover:text-amber-400 transition-colors hidden sm:inline">
-              ✦ SHOWROOM
-            </Link>
-            <Link href="#bento" className="text-gray-300 hover:text-amber-400 transition-colors hidden md:inline">
-              ✦ DISCIPLINES
-            </Link>
-            <Link href="/pricing" className="text-gray-300 hover:text-amber-400 transition-colors">
-              RATES
-            </Link>
-            <Link
-              href="/booking"
-              className="px-5 py-2 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-black font-extrabold tracking-widest hover:scale-105 transition-transform shadow-[0_0_20px_rgba(251,191,36,0.3)]"
-            >
-              BOOK SUITE →
-            </Link>
+          <div className="hidden md:flex items-center gap-8 font-medium text-sm">
+            <Link href="#services" className="hover:opacity-70 transition-opacity">Services</Link>
+            <Link href="#testimonials" className="hover:opacity-70 transition-opacity">Testimonials</Link>
+            <Link href="#faq" className="hover:opacity-70 transition-opacity">FAQ</Link>
           </div>
-        </nav>
+          <Link 
+            href="/booking" 
+            className="bg-[#FFFFCC] text-[#1A1A00] px-6 py-2 rounded-md font-bold text-sm hover:bg-white transition-colors"
+          >
+            BOOK NOW
+          </Link>
+        </div>
       </header>
 
-      {/* =========================================================================
-          HERO STAGE: THE OBSIDIAN & GOLD CINEMA SUITE (No more split monograph text!)
-          ========================================================================= */}
-      <section className="pt-32 pb-24 md:pt-44 md:pb-36 px-6 md:px-16 max-w-7xl mx-auto border-b border-white/10 relative">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Column: Monumental Titanium/Gold Typography & Studio CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="md:col-span-7 flex flex-col justify-center text-left"
-          >
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-mono tracking-[0.24em] uppercase w-fit mb-6 shadow-sm">
-              <span>✦ EST. 2023 · KUALA LUMPUR · PRODUCTION ARCHIVES</span>
-            </div>
-
-            <h1 className="text-6xl sm:text-7xl lg:text-[7.5rem] font-extrabold tracking-tight bg-gradient-to-br from-white via-neutral-100 to-neutral-400 bg-clip-text text-transparent leading-[0.85]">
-              CINEMATIC EMOTION.
-              <br />
-              IMMORTALIZED IN LIGHT.
-            </h1>
-
-            <p className="mt-8 text-base sm:text-lg text-gray-300 leading-relaxed font-normal max-w-xl">
-              Malaysia’s premier production studio for unscripted weddings, automotive engineering, and intimate editorial portraiture. We distill fleeting human seconds into timeless physical masterpieces.
-            </p>
-
-            {/* High-Impact Glass/Gold Studio CTAs */}
-            <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-5">
-              <Link
-                href="/pricing"
-                className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-[0.24em] px-8 py-5 rounded-full shadow-[0_10px_35px_rgba(251,191,36,0.35)] hover:scale-105 transition-transform"
+      <main>
+        {/* 2. VALUE PROPOSITION & MAIN OFFER (Hero) */}
+        <section className="px-6 py-20 md:py-32">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial="hidden" animate="visible" variants={fadeUp}
+              className="flex flex-col items-start"
+            >
+              <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+                Cinematic Emotion, Immortalized in Light.
+              </h1>
+              <p className="text-lg opacity-80 mb-8 max-w-lg leading-relaxed">
+                Malaysia’s premier photography studio for unscripted weddings, architectural commerce, and high-performance automotive. We transform fleeting seconds into enduring visual legacies.
+              </p>
+              <Link 
+                href="/pricing" 
+                className="bg-[#FFFFCC] text-[#1A1A00] px-8 py-4 rounded-md font-bold text-lg hover:bg-white transition-colors w-full sm:w-auto text-center shadow-lg"
               >
-                <span>✦ EXPLORE RATE CARD (FROM RM 450)</span>
-                <span>→</span>
+                VIEW PORTFOLIO & RATES
               </Link>
-              <Link
-                href="#showroom"
-                className="inline-flex items-center justify-center gap-3 border border-white/20 bg-white/5 backdrop-blur-xl text-white font-bold text-xs uppercase tracking-[0.24em] px-8 py-5 rounded-full hover:bg-white hover:text-black transition-all"
-              >
-                <span>VIEW MASTER SHOWROOM</span>
-                <span>↓</span>
-              </Link>
-            </div>
-
-            {/* Live Studio Telemetry Bar */}
-            <div className="mt-14 pt-8 border-t border-white/10 flex flex-wrap gap-x-10 gap-y-4 font-mono text-xs uppercase tracking-widest text-gray-400">
-              <div className="flex items-center gap-2">
-                <span className="text-amber-400 font-bold">01 /</span>
-                <span>4+ YEARS STUDIO MASTERY</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-amber-400 font-bold">02 /</span>
-                <span>200+ CURATED COMMISSIONS</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-amber-400 font-bold">03 /</span>
-                <span>100% RAW EMULSION PURITY</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Column: Floating Glass Master Pedestal (`portrait-04.jpg` + Maindhaa Overlay) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.15 }}
-            className="md:col-span-5 relative flex items-center justify-center"
-          >
-            <div className="relative w-full max-w-[420px] aspect-[3/4] rounded-3xl border border-white/15 bg-gradient-to-b from-white/10 to-transparent p-3 shadow-[0_40px_100px_rgba(0,0,0,0.85)] backdrop-blur-2xl overflow-hidden group">
-              <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                <Image
-                  src="/portfolio/portrait/portrait-04.jpg"
-                  alt="Maindhaa — Lead Director of Photography"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                
-                {/* Top Gold Corner Tag */}
-                <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md border border-amber-500/40 text-amber-300 font-mono text-[9px] px-3 py-1 rounded-full font-bold uppercase tracking-widest">
-                  ✦ DIRECTOR OF PHOTOGRAPHY
-                </div>
-
-                {/* Bottom Interactive Pedestal Info */}
-                <div className="absolute bottom-4 inset-x-4 bg-neutral-900/90 backdrop-blur-xl border border-white/15 rounded-xl p-4 text-left">
-                  <div className="flex justify-between items-center text-[10px] font-mono text-gray-400 uppercase tracking-widest">
-                    <span>MAINDHAA — LEAD ARTIST</span>
-                    <span className="text-amber-400">85MM f/1.4</span>
-                  </div>
-                  <div className="mt-1 text-sm font-bold text-white uppercase tracking-wider font-sans">
-                    FIG. 01 — THE ARTIST IN SILENCE
-                  </div>
-                  <div className="mt-2 text-[10px] text-gray-300 font-mono tracking-wide">
-                    Kuala Lumpur Studio · Available for Private Commissions
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          SECTION 2: THE CURATED SHOWROOM (Glassmorphic Filterable Grid & Lightbox)
-          ========================================================================= */}
-      <section id="showroom" className="py-24 md:py-36 px-6 md:px-16 max-w-7xl mx-auto border-b border-white/10">
-        <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-gray-400 font-mono text-xs uppercase tracking-[0.24em] mb-4">
-              <span>✦ CURATED EXHIBITION SUITE</span>
-            </div>
-            <h2 className="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tight text-white">
-              THE MASTER
-              <br />
-              SHOWROOM.
-            </h2>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative aspect-[4/5] md:aspect-square rounded-xl overflow-hidden border border-[#FFFFCC]/20 shadow-2xl"
+            >
+              <Image 
+                src="/portfolio/wedding/wedding-01.jpg" 
+                alt="Mainz Media Photography" 
+                fill 
+                className="object-cover"
+                priority
+              />
+            </motion.div>
           </div>
+        </section>
 
-          {/* Interactive Category Filter Pills */}
-          <div className="flex flex-wrap gap-2.5 mt-8 md:mt-0 font-mono text-xs font-bold uppercase tracking-widest">
+        {/* 3. SOCIAL PROOF */}
+        <section className="bg-[#FFFFCC]/5 border-y border-[#FFFFCC]/10 py-10 px-6">
+          <div className="max-w-6xl mx-auto flex flex-col items-center">
+            <p className="text-sm font-bold tracking-widest uppercase opacity-60 mb-6">
+              Trusted by 50+ High-Net-Worth Clients & Brands
+            </p>
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-80">
+              {/* Star Rating Representation */}
+              <div className="flex items-center gap-2">
+                <div className="flex text-[#FFFFCC] text-xl">★★★★★</div>
+                <span className="font-bold">5.0 / 5.0</span>
+              </div>
+              <div className="text-lg font-bold uppercase tracking-wider">Vogue MY</div>
+              <div className="text-lg font-bold uppercase tracking-wider">Speedhunters</div>
+              <div className="text-lg font-bold uppercase tracking-wider">Tatler</div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. BENEFITS & ADVANTAGES */}
+        <section className="py-24 px-6 max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Choose Mainz Media?</h2>
+            <p className="opacity-80 max-w-2xl mx-auto">We don't just take pictures; we engineer physical memories that appreciate in emotional value over time.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { id: "all", label: "✦ ALL REELS" },
-              { id: "automotive", label: "AUTOMOTIVE" },
-              { id: "weddings", label: "WEDDINGS" },
-              { id: "portraits", label: "PORTRAITS" },
-              { id: "commercial", label: "COMMERCIAL" },
-            ].map((pill) => (
-              <button
-                key={pill.id}
-                onClick={() => setActiveFilter(pill.id)}
-                className={`px-5 py-2.5 rounded-full transition-all cursor-pointer border ${
-                  activeFilter === pill.id
-                    ? "bg-amber-400 text-black border-amber-400 font-extrabold shadow-[0_0_20px_rgba(251,191,36,0.35)]"
-                    : "bg-neutral-900/80 text-gray-300 border-white/12 hover:border-amber-400/60 hover:text-white"
-                }`}
+              {
+                title: "Heirloom Quality",
+                desc: "Every plate is developed with strict color science to ensure your images look as striking in 50 years as they do today."
+              },
+              {
+                title: "Unobtrusive Approach",
+                desc: "We blend into the background, capturing raw, unscripted moments without forcing awkward or artificial poses."
+              },
+              {
+                title: "Lightning Delivery",
+                desc: "Receive a curated sneak peek gallery within 48 hours, so you can share your monumental moments immediately."
+              }
+            ].map((benefit, i) => (
+              <motion.div 
+                key={i}
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                className="bg-[#FFFFCC]/5 p-8 rounded-xl border border-[#FFFFCC]/10 text-center"
               >
-                {pill.label}
-              </button>
+                <div className="w-12 h-12 rounded-full bg-[#FFFFCC] text-[#1A1A00] flex items-center justify-center mx-auto mb-6 text-xl font-bold">
+                  {i + 1}
+                </div>
+                <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
+                <p className="opacity-70 leading-relaxed text-sm">{benefit.desc}</p>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* Dynamic Showroom Grid (`Rounded Glass Cards`) */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10">
-          <AnimatePresence>
-            {filteredPlates.map((plate, index) => {
-              const isWide = index === 0 || index === 3 || index === 4;
-              const spanClass = isWide ? "md:col-span-7" : "md:col-span-5";
-              const aspectClass = isWide ? "aspect-[16/10]" : "aspect-[4/5]";
-
-              return (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.5 }}
-                  key={plate.id}
-                  onClick={() => setSelectedPlate(plate)}
-                  className={`${spanClass} rounded-2xl border border-white/12 bg-neutral-900/60 backdrop-blur-xl overflow-hidden shadow-2xl group cursor-pointer flex flex-col justify-between p-3 transition-all hover:border-amber-400/50`}
-                >
-                  <div className={`relative ${aspectClass} w-full rounded-xl overflow-hidden bg-black`}>
-                    <Image
-                      src={plate.src}
-                      alt={plate.title}
-                      fill
-                      className="object-cover transition-all duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    
-                    {/* Top Specs Pill */}
-                    <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-white/15 text-white font-mono text-[9px] px-3 py-1 rounded-full uppercase tracking-widest">
-                      {plate.specs}
-                    </div>
-
-                    {/* Center Inspect Action */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="px-6 py-3 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-widest shadow-2xl transform translate-y-3 group-hover:translate-y-0 transition-transform">
-                        ✦ INSPECT MASTER PLATE
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Card Bottom Info */}
-                  <div className="pt-4 px-2 pb-2 flex justify-between items-baseline">
-                    <div>
-                      <h3 className="text-base sm:text-lg font-bold text-white uppercase tracking-wider font-sans group-hover:text-amber-400 transition-colors">
-                        {plate.title}
-                      </h3>
-                      <div className="mt-0.5 text-[10px] font-mono text-gray-400 uppercase tracking-widest">
-                        {plate.category.toUpperCase()} SERIES · {plate.location}
-                      </div>
-                    </div>
-                    <span className="font-mono text-xs font-bold text-amber-400">
-                      [{plate.year}]
-                    </span>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
-      </section>
-
-      {/* =========================================================================
-          SECTION 3: THE FOUR ARCHITECTURAL DISCIPLINES (Apple Pro Bento Grid)
-          ========================================================================= */}
-      <section id="bento" className="py-24 md:py-36 px-6 md:px-16 max-w-7xl mx-auto border-b border-white/10">
-        <div className="flex flex-col md:flex-row justify-between items-baseline mb-16">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-gray-400 font-mono text-xs uppercase tracking-[0.24em] mb-4">
-              <span>✦ CORE PRODUCTION PILLARS</span>
+        {/* 5. PRODUCT SERVICE OR FEATURES (Alternating Blocks) */}
+        <section id="services" className="py-24 px-6 bg-[#FFFFCC]/5 border-y border-[#FFFFCC]/10">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl font-bold mb-4">Master Disciplines</h2>
+              <p className="opacity-80 max-w-2xl mx-auto">Specialized production suites tailored to your exact narrative needs.</p>
             </div>
-            <h2 className="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tight text-white">
-              ARCHITECTURAL
-              <br />
-              DISCIPLINES.
-            </h2>
-          </div>
-          <p className="mt-6 md:mt-0 max-w-md text-sm text-gray-400 leading-relaxed font-normal">
-            Every photograph is engineered as a physical cinema plate. Select any architectural discipline below to explore dedicated monographs.
-          </p>
-        </div>
 
-        {/* Luxury Glass Bento Box */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 auto-rows-[340px]">
-          {bentoDisciplines.map((item) => (
-            <Link
-              key={item.slug}
-              href={item.slug}
-              className={`${item.span} rounded-3xl border border-white/15 bg-neutral-900/80 backdrop-blur-2xl relative overflow-hidden group p-8 sm:p-10 flex flex-col justify-end transition-all hover:border-amber-400/60 shadow-2xl cursor-pointer`}
-            >
-              {/* Background Plate with smooth scale & overlay */}
-              <div className="absolute inset-0 z-0">
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110 opacity-45 group-hover:opacity-65"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
+            {/* Block 1: Image Left, Text Right */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FFFFCC]/20 order-2 md:order-1">
+                <Image src="/portfolio/wedding/wedding-01.jpg" alt="Weddings" fill className="object-cover" />
               </div>
-
-              {/* Bento Content */}
-              <div className="relative z-10 flex flex-col justify-end">
-                <div className="text-[10px] font-mono font-bold uppercase tracking-[0.24em] text-amber-400 mb-2">
-                  ✦ {item.subtitle}
-                </div>
-                <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight group-hover:text-amber-300 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-xs sm:text-sm text-gray-300 leading-relaxed max-w-lg font-normal">
-                  {item.desc}
+              <div className="order-1 md:order-2">
+                <h3 className="text-3xl font-bold mb-4">Weddings & Sacred Vows</h3>
+                <p className="opacity-80 mb-6 leading-relaxed">
+                  We document your most sacred day with an editorial, fly-on-the-wall approach. From rain-soaked vows to the final dance, we preserve the authentic resonance of your celebration.
                 </p>
-                <div className="mt-6 pt-6 border-t border-white/15 flex justify-between items-center font-mono text-xs font-bold uppercase tracking-widest text-white">
-                  <span>EXPLORE {item.title}</span>
-                  <span className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-amber-400 group-hover:text-black transition-all flex items-center justify-center font-bold">
-                    →
-                  </span>
-                </div>
+                <ul className="space-y-3 opacity-90 mb-8">
+                  <li className="flex items-center gap-2">✓ Full Day Coverage</li>
+                  <li className="flex items-center gap-2">✓ Heirloom Print Albums</li>
+                  <li className="flex items-center gap-2">✓ High-Res Digital Archive</li>
+                </ul>
               </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+            </div>
 
-      {/* =========================================================================
-          SECTION 4: THE GLASS COMMISSION CONSOLE (Commanding Booking Finale)
-          ========================================================================= */}
-      <section className="py-24 md:py-36 px-6 md:px-16 max-w-7xl mx-auto">
-        <div className="rounded-3xl border border-amber-500/30 bg-gradient-to-b from-neutral-900/90 via-neutral-950 to-black p-10 sm:p-16 md:p-24 text-center relative overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.9)]">
-          {/* Ambient Gold Console Glow */}
-          <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/[0.08] rounded-full blur-[140px]" />
+            {/* Block 2: Text Left, Image Right */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+              <div className="order-1">
+                <h3 className="text-3xl font-bold mb-4">Automotive Engineering</h3>
+                <p className="opacity-80 mb-6 leading-relaxed">
+                  Precision rig lighting, dusk circuit documentation, and dynamic panning shots. We capture the raw aerodynamic aggression and engineering beauty of high-performance machines.
+                </p>
+                <ul className="space-y-3 opacity-90 mb-8">
+                  <li className="flex items-center gap-2">✓ Twilight & Night Sessions</li>
+                  <li className="flex items-center gap-2">✓ Rig & Motion Blur Plates</li>
+                  <li className="flex items-center gap-2">✓ Private Garage Documentation</li>
+                </ul>
+              </div>
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FFFFCC]/20 order-2">
+                <Image src="/portfolio/automotive/automotive-01.jpg" alt="Automotive" fill className="object-cover" />
+              </div>
+            </div>
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 font-mono text-xs uppercase tracking-[0.24em] mb-8">
-            <span>✦ 2025/2026 PRIVATE COMMISSIONS NOW OPEN</span>
+            {/* Block 3: Image Left, Text Right */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FFFFCC]/20 order-2 md:order-1">
+                <Image src="/portfolio/commercial/commercial-01.jpg" alt="Commercial" fill className="object-cover" />
+              </div>
+              <div className="order-1 md:order-2">
+                <h3 className="text-3xl font-bold mb-4">Commercial Architecture</h3>
+                <p className="opacity-80 mb-6 leading-relaxed">
+                  Elevate your brand with high-impact interior and architectural photography. Engineered for luxury lookbooks, hotel portfolios, and international marketing campaigns.
+                </p>
+                <ul className="space-y-3 opacity-90 mb-8">
+                  <li className="flex items-center gap-2">✓ Tilt-Shift Perspective Control</li>
+                  <li className="flex items-center gap-2">✓ Advanced Composite Lighting</li>
+                  <li className="flex items-center gap-2">✓ Commercial Usage Licensing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. TESTIMONIALS */}
+        <section id="testimonials" className="py-24 px-6 max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Client Experiences</h2>
+            <p className="opacity-80 max-w-2xl mx-auto">Don't just take our word for it.</p>
           </div>
 
-          <h2 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-white tracking-tight leading-[0.88] max-w-4xl mx-auto">
-            READY TO IMMORTALIZE
-            <br />
-            YOUR LEGACY?
-          </h2>
-
-          <p className="mt-6 text-base sm:text-lg text-gray-300 leading-relaxed font-normal max-w-2xl mx-auto">
-            Whether for a sacred wedding celebration, architectural brand lookbook, or twilight automotive session, rates are structured with total transparency and zero hidden modifiers.
-          </p>
-
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link
-              href="/pricing"
-              className="w-full sm:w-auto px-10 py-5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-[0.24em] shadow-[0_10px_35px_rgba(251,191,36,0.35)] hover:scale-105 transition-transform"
-            >
-              ✦ VIEW COMMISSION RATES (FROM RM 450)
-            </Link>
-            <Link
-              href="/booking"
-              className="w-full sm:w-auto px-10 py-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl text-white font-bold text-xs uppercase tracking-[0.24em] hover:bg-white hover:text-black transition-all"
-            >
-              LAUNCH BOOKING CONSOLE →
-            </Link>
-          </div>
-
-          {/* Direct Luxury Contacts Block */}
-          <div className="mt-16 pt-10 border-t border-white/15 flex flex-wrap justify-center gap-x-12 gap-y-4 font-mono text-xs uppercase tracking-widest text-gray-400">
-            <span>✦ WHATSAPP: +60 16-322 8337</span>
-            <span>✦ INSTAGRAM: @MAINZ.MEDIA</span>
-            <span>✦ EMAIL: MAINDHA@GMAIL.COM</span>
-          </div>
-        </div>
-
-        {/* Studio Bottom Rule */}
-        <div className="mt-20 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono uppercase tracking-[0.24em] text-gray-500">
-          <span>MAINZ MEDIA — KUALA LUMPUR, MALAYSIA</span>
-          <span>THE OBSIDIAN &amp; GOLD MASTER PRODUCTION SUITE 2025</span>
-          <span>ALL RIGHTS RESERVED</span>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          FULL-SCREEN OPTICAL TELEMETRY LIGHTBOX (Museum Inspection Console)
-          ========================================================================= */}
-      <AnimatePresence>
-        {selectedPlate && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedPlate(null)}
-            className="fixed inset-0 z-50 bg-black/94 backdrop-blur-2xl flex items-center justify-center p-4 sm:p-8 md:p-14 cursor-zoom-out"
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-full max-h-[92vh] bg-neutral-900 border border-white/20 flex flex-col overflow-hidden shadow-2xl cursor-default rounded-3xl"
-            >
-              {/* Lightbox Header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-white/15 bg-black/60 font-mono text-xs uppercase tracking-widest">
-                <div className="flex items-center gap-2.5 text-amber-400 font-bold">
-                  <span>✦ ARCHIVAL MASTER PLATE</span>
-                  <span className="text-gray-400">| {selectedPlate.category.toUpperCase()} SERIES</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "Mainz Media completely blew us away. They managed to capture moments we didn't even realize happened. The final gallery felt like a cinematic movie of our wedding day.",
+                name: "Sarah & Daniel",
+                tag: "Wedding Clients"
+              },
+              {
+                quote: "The automotive shoot was incredible. They understood exactly how to light the curves of the car at dusk. The motion shots are currently hanging in my office.",
+                name: "Ahmad R.",
+                tag: "Automotive Collector"
+              },
+              {
+                quote: "Professional, punctual, and highly creative. They elevated our brand's visual identity overnight with their architectural shots. Highly recommended for commercial work.",
+                name: "Elena W.",
+                tag: "Creative Director"
+              }
+            ].map((test, i) => (
+              <div key={i} className="bg-[#FFFFCC] text-[#1A1A00] p-8 rounded-xl flex flex-col justify-between">
+                <div>
+                  <div className="text-2xl mb-4">★★★★★</div>
+                  <p className="text-sm font-medium leading-relaxed italic mb-8">"{test.quote}"</p>
                 </div>
-                <button
-                  onClick={() => setSelectedPlate(null)}
-                  className="text-gray-400 hover:text-white font-bold transition-colors cursor-pointer"
-                >
-                  [ CLOSE VIEWFINDER × ]
-                </button>
+                <div>
+                  <p className="font-bold">{test.name}</p>
+                  <p className="text-xs opacity-70">{test.tag}</p>
+                </div>
               </div>
+            ))}
+          </div>
+        </section>
 
-              {/* Photograph Display */}
-              <div className="relative aspect-[16/10] w-full bg-black">
-                <Image
-                  src={selectedPlate.src}
-                  alt={selectedPlate.title}
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+        {/* 7. OBJECTION HANDLING (FAQS) */}
+        <section id="faq" className="py-24 px-6 bg-[#FFFFCC]/5 border-y border-[#FFFFCC]/10">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+              <p className="opacity-80">Everything you need to know before booking.</p>
+            </div>
 
-              {/* Specs & Description Footer */}
-              <div className="p-6 bg-neutral-900 grid grid-cols-1 md:grid-cols-12 gap-6 border-t border-white/15 text-xs">
-                <div className="md:col-span-6">
-                  <div className="text-amber-400 font-mono text-[10px] font-bold uppercase tracking-widest">PLATE TITLE &amp; LOCATION</div>
-                  <div className="mt-1 text-lg font-bold text-white tracking-wide">{selectedPlate.title}</div>
-                  <div className="text-gray-400 mt-1">{selectedPlate.location} · {selectedPlate.year}</div>
-                  <p className="mt-3 text-gray-300 text-xs leading-relaxed font-normal">{selectedPlate.desc}</p>
-                </div>
-                <div className="md:col-span-3 font-mono">
-                  <div className="text-amber-400 text-[10px] font-bold uppercase tracking-widest">EXPOSURE SPECS</div>
-                  <div className="mt-2 text-white font-bold">{selectedPlate.specs}</div>
-                </div>
-                <div className="md:col-span-3 flex items-center justify-end">
-                  <Link
-                    href={`/booking?plate=${selectedPlate.id}`}
-                    onClick={() => setSelectedPlate(null)}
-                    className="w-full text-center bg-gradient-to-r from-amber-400 to-amber-500 text-black px-6 py-4 font-mono font-extrabold uppercase tracking-widest hover:scale-105 transition-transform rounded-xl shadow-lg"
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div key={i} className="border border-[#FFFFCC]/20 rounded-lg overflow-hidden bg-[#1A1A00]">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-[#FFFFCC]/5 transition-colors"
                   >
-                    INQUIRE THIS STYLE →
-                  </Link>
+                    <span>{faq.question}</span>
+                    <span className="text-2xl font-light">{openFaq === i ? '−' : '+'}</span>
+                  </button>
+                  <AnimatePresence>
+                    {openFaq === i && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-5 pt-1 text-sm opacity-80 leading-relaxed border-t border-[#FFFFCC]/10">
+                          {faq.answer}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 8. ADDITIONAL CALL-TO-ACTION */}
+        <section className="py-32 px-6">
+          <div className="max-w-4xl mx-auto text-center bg-[#FFFFCC] text-[#1A1A00] rounded-2xl p-12 md:p-20 shadow-2xl">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+              Ready to immortalize your legacy?
+            </h2>
+            <p className="text-lg opacity-80 mb-10 max-w-2xl mx-auto">
+              Our calendar for 2025/2026 is filling up fast. Reach out today to secure your date and discuss your vision.
+            </p>
+            <Link 
+              href="/booking" 
+              className="bg-[#1A1A00] text-[#FFFFCC] px-10 py-5 rounded-md font-bold text-lg hover:bg-black transition-colors inline-block shadow-lg"
+            >
+              BOOK YOUR SESSION NOW
+            </Link>
+          </div>
+        </section>
+      </main>
+
+      {/* 9. SIMPLE FOOTER */}
+      <footer className="border-t border-[#FFFFCC]/10 py-12 px-6 bg-[#1A1A00]">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="font-extrabold text-xl tracking-tight uppercase">
+            MAINZ MEDIA
+          </div>
+          
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm opacity-80">
+            <a href="mailto:maindha@gmail.com" className="hover:opacity-100 transition-opacity">maindha@gmail.com</a>
+            <a href="tel:+60163228337" className="hover:opacity-100 transition-opacity">+60 16-322 8337</a>
+            <span>Kuala Lumpur, Malaysia</span>
+          </div>
+
+          <div className="text-xs opacity-60">
+            © {new Date().getFullYear()} Mainz Media. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
     </div>
   );
 }
