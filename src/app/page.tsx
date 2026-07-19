@@ -96,7 +96,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-[20%] left-1/2 -translate-x-1/2 text-5xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#FAFCBE]"
+                className="absolute -bottom-[20%] left-1/2 -translate-x-1/2 text-3xl sm:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#FAFCBE]"
               >
                 Maindha
               </motion.div>
