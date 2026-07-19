@@ -57,7 +57,7 @@ export default function LandingPage() {
 
       <main>
         {/* 2. HERO SECTION (Exactly matching the user's uploaded image) */}
-        <section className="relative w-full h-[85vh] min-h-[600px] bg-[#92000A] text-[#FAFCBE] overflow-hidden flex flex-col justify-between pt-8 md:pt-12">
+        <section className="relative w-full h-screen min-h-[600px] bg-[#92000A] text-[#FAFCBE] overflow-hidden flex flex-col justify-between pt-8 md:pt-12">
           
 
 
