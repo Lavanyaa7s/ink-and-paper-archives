@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import VisualDiaryGallery from "@/components/VisualDiaryGallery";
 import ServicesSection from "@/components/ServicesSection";
+import InstagramFeed from "@/components/InstagramFeed";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -351,6 +352,9 @@ export default function LandingPage() {
             </a>
           </div>
         </section>
+        
+        {/* 9. INSTAGRAM FEED */}
+        <InstagramFeed />
       </main>
 
       {/* 9. SIMPLE FOOTER (Champagne Background for visual closure) */}
