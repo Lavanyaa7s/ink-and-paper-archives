@@ -32,12 +32,12 @@ export default function VisualDiaryGallery() {
   );
 
   return (
-    <section id="gallery" className="py-24 px-6 bg-white text-[#111111] overflow-hidden">
+    <section id="gallery" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
-          <p className="text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">GALLERY</p>
+          <p className="text-xs font-bold tracking-widest uppercase opacity-70 mb-4">GALLERY</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">My Visual Diary</h2>
-          <p className="text-gray-600 max-w-md mx-auto font-medium text-lg leading-relaxed">
+          <p className="opacity-80 max-w-md mx-auto font-medium text-lg leading-relaxed">
             See the world through my lens: <br/>adventures in photos and videos
           </p>
         </div>
@@ -48,16 +48,16 @@ export default function VisualDiaryGallery() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2 rounded-full text-sm font-medium border transition-colors ${
+              className={`px-6 py-2 rounded-full text-sm font-bold border transition-colors ${
                 activeCategory === cat
-                  ? 'bg-[#0B0C10] text-white border-[#0B0C10]'
-                  : 'bg-transparent text-gray-600 border-gray-400 hover:border-gray-800 hover:text-black'
+                  ? 'bg-[#FAFCBE] text-[#92000A] border-[#FAFCBE]'
+                  : 'bg-transparent text-[#FAFCBE] border-[#FAFCBE]/40 hover:border-[#FAFCBE]'
               }`}
             >
               {cat}
             </button>
           ))}
-          <button className="px-6 py-2 rounded-full text-sm font-medium border border-gray-400 text-black hover:bg-gray-100 flex items-center gap-2 transition-colors">
+          <button className="px-6 py-2 rounded-full text-sm font-bold border border-[#FAFCBE]/40 text-[#FAFCBE] hover:bg-[#FAFCBE]/10 flex items-center gap-2 transition-colors">
             View More <span>→</span>
           </button>
         </div>
