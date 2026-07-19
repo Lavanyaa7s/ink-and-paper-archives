@@ -157,8 +157,67 @@ export default function LandingPage() {
           </div>
         </section>
 
+        
+        {/* 4.5 PACKAGES & INVESTMENT (Champagne Background) */}
+        <section id="packages" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-24">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Investment & Packages</h2>
+              <p className="opacity-80 max-w-2xl mx-auto font-medium text-lg">Transparent pricing for premium documentation.</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Package 1 */}
+              <div className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl hover:-translate-y-2 transition-transform duration-300">
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Portrait & Lifestyle</h3>
+                  <div className="text-4xl font-[family-name:var(--font-yeseva)] mb-8">RM 800<span className="text-sm font-sans opacity-70"> / session</span></div>
+                  <ul className="space-y-4 opacity-90 mb-10 font-medium">
+                    <li className="flex items-center gap-3">✓ 2-Hour Location Shoot</li>
+                    <li className="flex items-center gap-3">✓ 20 Retouched High-Res Images</li>
+                    <li className="flex items-center gap-3">✓ Private Online Gallery</li>
+                    <li className="flex items-center gap-3">✓ Creative Direction</li>
+                  </ul>
+                </div>
+                <button className="w-full py-4 bg-[#FAFCBE] text-[#92000A] font-extrabold uppercase tracking-widest rounded-lg hover:bg-white transition-colors">Book Session</button>
+              </div>
+
+              {/* Package 2 */}
+              <div className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl scale-100 md:scale-105 border-4 border-[#92000A] relative hover:-translate-y-2 transition-transform duration-300 z-10">
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#FAFCBE] text-[#92000A] px-6 py-1.5 text-sm font-black uppercase tracking-widest rounded-full whitespace-nowrap shadow-xl">Most Popular</div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Wedding & Sacred Vows</h3>
+                  <div className="text-4xl font-[family-name:var(--font-yeseva)] mb-8">RM 4,500<span className="text-sm font-sans opacity-70"> / day</span></div>
+                  <ul className="space-y-4 opacity-90 mb-10 font-medium">
+                    <li className="flex items-center gap-3">✓ 10-Hour Full Coverage</li>
+                    <li className="flex items-center gap-3">✓ 2 Lead Photographers</li>
+                    <li className="flex items-center gap-3">✓ 500+ Curated Digital Archives</li>
+                    <li className="flex items-center gap-3">✓ Premium Layflat Heirloom Album</li>
+                  </ul>
+                </div>
+                <button className="w-full py-4 bg-[#FAFCBE] text-[#92000A] font-extrabold uppercase tracking-widest rounded-lg hover:bg-white transition-colors">Book Wedding</button>
+              </div>
+
+              {/* Package 3 */}
+              <div className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl hover:-translate-y-2 transition-transform duration-300">
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Commercial & Auto</h3>
+                  <div className="text-4xl font-[family-name:var(--font-yeseva)] mb-8">RM 2,500<span className="text-sm font-sans opacity-70"> / project</span></div>
+                  <ul className="space-y-4 opacity-90 mb-10 font-medium">
+                    <li className="flex items-center gap-3">✓ Half-Day Production (4 Hours)</li>
+                    <li className="flex items-center gap-3">✓ Advanced Composite Lighting</li>
+                    <li className="flex items-center gap-3">✓ Full Commercial Licensing</li>
+                    <li className="flex items-center gap-3">✓ Rush 48-Hour Delivery</li>
+                  </ul>
+                </div>
+                <button className="w-full py-4 border-2 border-[#FAFCBE] text-[#FAFCBE] font-extrabold uppercase tracking-widest rounded-lg hover:bg-[#FAFCBE] hover:text-[#92000A] transition-colors">Inquire Now</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 5. PRODUCT SERVICE OR FEATURES (Champagne Background) */}
-        <section id="services" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
+        <section id="services" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE]">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
               <h2 className="text-4xl font-bold mb-4">Master Disciplines</h2>
@@ -167,7 +226,7 @@ export default function LandingPage() {
 
             {/* Block 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#92000A]/20 order-2 md:order-1 shadow-xl">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2 md:order-1 shadow-xl">
                 <Image src="/portfolio/events/event-03.jpg" alt="Weddings" fill className="object-cover" />
               </div>
               <div className="order-1 md:order-2">
@@ -196,14 +255,14 @@ export default function LandingPage() {
                   <li className="flex items-center gap-2">✓ Private Garage Documentation</li>
                 </ul>
               </div>
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#92000A]/20 order-2 shadow-xl">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2 shadow-xl">
                 <Image src="/portfolio/automotive/auto-01.jpg" alt="Automotive" fill className="object-cover" />
               </div>
             </div>
 
             {/* Block 3 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#92000A]/20 order-2 md:order-1 shadow-xl">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2 md:order-1 shadow-xl">
                 <Image src="/portfolio/featured/featured-03.jpg" alt="Commercial" fill className="object-cover" />
               </div>
               <div className="order-1 md:order-2">
@@ -222,7 +281,7 @@ export default function LandingPage() {
         </section>
 
         {/* 6. TESTIMONIALS (Sangria Background) */}
-        <section id="testimonials" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE]">
+        <section id="testimonials" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Client Experiences</h2>
@@ -247,9 +306,9 @@ export default function LandingPage() {
                   tag: "Creative Director"
                 }
               ].map((test, i) => (
-                <div key={i} className="bg-[#FAFCBE] text-[#92000A] p-8 rounded-xl flex flex-col justify-between shadow-xl">
+                <div key={i} className="bg-[#92000A] text-[#FAFCBE] p-8 rounded-xl flex flex-col justify-between shadow-xl">
                   <div>
-                    <div className="text-2xl mb-4 text-[#92000A]">★★★★★</div>
+                    <div className="text-2xl mb-4 text-[#FAFCBE]">★★★★★</div>
                     <p className="text-sm font-medium leading-relaxed italic mb-8">"{test.quote}"</p>
                   </div>
                   <div>
@@ -263,7 +322,7 @@ export default function LandingPage() {
         </section>
 
         {/* 7. OBJECTION HANDLING (FAQS) (Champagne Background) */}
-        <section id="faq" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
+        <section id="faq" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE]">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
@@ -272,10 +331,10 @@ export default function LandingPage() {
 
             <div className="space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="border border-[#92000A]/30 rounded-lg overflow-hidden bg-transparent">
+                <div key={i} className="border border-[#FAFCBE]/30 rounded-lg overflow-hidden bg-transparent">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-[#92000A]/5 transition-colors"
+                    className="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-[#FAFCBE]/5 transition-colors"
                   >
                     <span>{faq.question}</span>
                     <span className="text-2xl font-light">{openFaq === i ? '−' : '+'}</span>
@@ -288,7 +347,7 @@ export default function LandingPage() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-5 pt-1 text-sm opacity-80 leading-relaxed border-t border-[#92000A]/10">
+                        <div className="px-6 pb-5 pt-1 text-sm opacity-80 leading-relaxed border-t border-[#FAFCBE]/10">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -301,8 +360,8 @@ export default function LandingPage() {
         </section>
 
         {/* 8. ADDITIONAL CALL-TO-ACTION (Sangria Background) */}
-        <section className="py-32 px-6 bg-[#92000A] text-[#FAFCBE]">
-          <div className="max-w-4xl mx-auto text-center bg-[#FAFCBE] text-[#92000A] rounded-2xl p-12 md:p-20 shadow-2xl border border-[#FAFCBE]/20">
+        <section className="py-32 px-6 bg-[#FAFCBE] text-[#92000A]">
+          <div className="max-w-4xl mx-auto text-center bg-[#92000A] text-[#FAFCBE] rounded-2xl p-12 md:p-20 shadow-2xl border border-[#92000A]/20">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Ready to immortalize your legacy?
             </h2>
@@ -311,7 +370,7 @@ export default function LandingPage() {
             </p>
             <Link 
               href="/booking" 
-              className="bg-[#92000A] text-[#FAFCBE] px-10 py-5 rounded-md font-bold text-lg hover:bg-black hover:text-[#FAFCBE] transition-colors inline-block shadow-lg"
+              className="bg-[#FAFCBE] text-[#92000A] px-10 py-5 rounded-md font-bold text-lg hover:bg-black hover:text-[#92000A] transition-colors inline-block shadow-lg"
             >
               BOOK YOUR SESSION NOW
             </Link>
@@ -320,7 +379,7 @@ export default function LandingPage() {
       </main>
 
       {/* 9. SIMPLE FOOTER (Champagne Background for visual closure) */}
-      <footer className="border-t border-[#92000A]/10 py-12 px-6 bg-[#FAFCBE] text-[#92000A]">
+      <footer className="border-t border-[#FAFCBE]/10 py-12 px-6 bg-[#92000A] text-[#FAFCBE]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="font-extrabold text-xl tracking-tight uppercase">
             MAINZ MEDIA
