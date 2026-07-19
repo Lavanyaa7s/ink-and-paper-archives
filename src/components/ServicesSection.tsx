@@ -74,10 +74,10 @@ export default function ServicesSection() {
               viewport={{ once: true }} 
               transition={{ duration: 0.5, delay: index * 0.1 }} 
               variants={fadeUp}
-              className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-[#92000A] text-[#FAFCBE] rounded-2xl p-6 flex flex-col items-center text-center shadow-2xl hover:shadow-[0_20px_50px_rgba(146,0,10,0.4)] hover:-translate-y-2 transition-all duration-300 border border-[#92000A]"
             >
               {/* Image Container */}
-              <div className="w-full aspect-[4/3] relative rounded-2xl overflow-hidden mb-6">
+              <div className="w-full aspect-[4/3] relative rounded-2xl overflow-hidden mb-6 border border-[#FAFCBE]/10">
                 <Image 
                   src={service.image} 
                   alt={service.title} 
@@ -87,13 +87,13 @@ export default function ServicesSection() {
               </div>
 
               {/* Text Content */}
-              <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
-              <p className="text-sm text-gray-500 italic mb-8 flex-grow leading-relaxed">
+              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <p className="text-sm opacity-80 italic mb-8 flex-grow leading-relaxed">
                 {service.description}
               </p>
 
               {/* MORE Link */}
-              <button className="text-xs font-bold tracking-widest text-gray-800 uppercase border-b-2 border-gray-400 pb-1 hover:border-gray-900 transition-colors mt-auto">
+              <button className="text-xs font-bold tracking-widest uppercase border-b-2 border-[#FAFCBE]/40 pb-1 hover:border-[#FAFCBE] transition-colors mt-auto">
                 MORE
               </button>
             </motion.div>
