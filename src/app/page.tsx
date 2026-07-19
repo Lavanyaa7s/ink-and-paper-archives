@@ -84,7 +84,7 @@ export default function LandingPage() {
               className="relative aspect-[4/5] md:aspect-square rounded-xl overflow-hidden border border-[#FFFFCC]/20 shadow-2xl"
             >
               <Image 
-                src="/portfolio/photographer/maindhaa.png" 
+                src="/portraitMaindha.png" 
                 alt="Maindha Portrait" 
                 fill 
                 className="object-contain object-bottom drop-shadow-2xl"
