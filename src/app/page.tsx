@@ -64,7 +64,7 @@ export default function LandingPage() {
 
 
           {/* Massive Typography Background */}
-          <div className="absolute top-[40%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-10 pointer-events-none px-2">
+          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-10 pointer-events-none px-2">
             <div className="relative inline-block">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
@@ -86,7 +86,7 @@ export default function LandingPage() {
           </div>
 
           {/* Foreground Signature (Mobile Only) */}
-          <div className="absolute top-[40%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 md:hidden">
+          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 md:hidden">
             <div className="relative inline-block">
               {/* Invisible placeholder to match dimensions */}
               <h1 className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] leading-none tracking-tight whitespace-nowrap flex flex-col opacity-0">
@@ -96,7 +96,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-[20%] right-[-5%] text-5xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#FAFCBE]"
+                className="absolute -bottom-[20%] left-1/2 -translate-x-1/2 text-5xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#FAFCBE]"
               >
                 Maindha
               </motion.div>
