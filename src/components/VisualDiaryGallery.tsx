@@ -32,33 +32,38 @@ export default function VisualDiaryGallery() {
   );
 
   return (
-    <section id="gallery" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE] overflow-hidden">
+    <section id="gallery" className="py-24 px-6 bg-white text-[#111111] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
-          <p className="text-sm font-bold tracking-widest uppercase opacity-70 mb-2">GALLERY</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-gray-500 mb-4">GALLERY</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">My Visual Diary</h2>
-          <p className="opacity-80 max-w-2xl mx-auto font-medium text-lg">See the world through my lens: adventures in photos and videos.</p>
+          <p className="text-gray-600 max-w-md mx-auto font-medium text-lg leading-relaxed">
+            See the world through my lens: <br/>adventures in photos and videos
+          </p>
         </div>
 
         {/* Pills Navigation */}
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
+        <div className="flex flex-wrap justify-center items-center gap-3 mb-16">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2 rounded-full text-sm font-bold border transition-colors ${
+              className={`px-6 py-2 rounded-full text-sm font-medium border transition-colors ${
                 activeCategory === cat
-                  ? 'bg-[#FAFCBE] text-[#92000A] border-[#FAFCBE]'
-                  : 'bg-transparent text-[#FAFCBE] border-[#FAFCBE]/30 hover:border-[#FAFCBE]'
+                  ? 'bg-[#0B0C10] text-white border-[#0B0C10]'
+                  : 'bg-transparent text-gray-600 border-gray-400 hover:border-gray-800 hover:text-black'
               }`}
             >
               {cat}
             </button>
           ))}
+          <button className="px-6 py-2 rounded-full text-sm font-medium border border-gray-400 text-black hover:bg-gray-100 flex items-center gap-2 transition-colors">
+            View More <span>→</span>
+          </button>
         </div>
 
         {/* 3D Swiper */}
-        <div className="w-full relative py-10">
+        <div className="w-full relative py-4">
           <Swiper
             effect={'coverflow'}
             grabCursor={true}
@@ -67,18 +72,17 @@ export default function VisualDiaryGallery() {
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 150,
-              modifier: 2.5,
-              slideShadows: true,
+              depth: 300,
+              modifier: 1.5,
+              slideShadows: false,
             }}
-            pagination={{ clickable: true }}
-            modules={[EffectCoverflow, Pagination]}
-            className="w-full h-full"
+            modules={[EffectCoverflow]}
+            className="w-full h-full !pb-12"
             key={activeCategory} // Force re-render on category change to center slides properly
           >
             {filteredImages.map((img, index) => (
               <SwiperSlide key={index} style={{ width: 'auto' }}>
-                <div className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] aspect-[4/5] md:aspect-[4/3] lg:aspect-[16/10] relative rounded-2xl overflow-hidden shadow-2xl mx-auto border border-[#FAFCBE]/10">
+                <div className="w-[300px] sm:w-[400px] md:w-[450px] lg:w-[480px] aspect-[4/5] relative rounded-2xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] mx-auto">
                   <Image src={img.src} alt={img.category} fill className="object-cover" />
                 </div>
               </SwiperSlide>
@@ -86,18 +90,6 @@ export default function VisualDiaryGallery() {
           </Swiper>
         </div>
       </div>
-
-      <style jsx global>{`
-        /* Swiper Pagination Styling */
-        .swiper-pagination-bullet {
-          background: #FAFCBE !important;
-          opacity: 0.5 !important;
-        }
-        .swiper-pagination-bullet-active {
-          opacity: 1 !important;
-          background: #FAFCBE !important;
-        }
-      `}</style>
     </section>
   );
 }
