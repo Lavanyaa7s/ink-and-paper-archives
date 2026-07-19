@@ -88,14 +88,9 @@ export default function ServicesSection() {
 
               {/* Text Content */}
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-sm opacity-80 italic mb-8 flex-grow leading-relaxed">
+              <p className="text-sm opacity-80 italic flex-grow leading-relaxed">
                 {service.description}
               </p>
-
-              {/* MORE Link */}
-              <button className="text-xs font-bold tracking-widest uppercase border-b-2 border-[#FAFCBE]/40 pb-1 hover:border-[#FAFCBE] transition-colors mt-auto">
-                MORE
-              </button>
             </motion.div>
           ))}
         </div>
