@@ -59,13 +59,7 @@ export default function LandingPage() {
         {/* 2. HERO SECTION (Exactly matching the user's uploaded image) */}
         <section className="relative w-full h-[85vh] min-h-[600px] bg-[#92000A] text-[#FAFCBE] overflow-hidden flex flex-col justify-between pt-8 md:pt-12">
           
-          {/* Top subtle text row from the image */}
-          <div className="relative z-20 max-w-7xl mx-auto w-full px-6 md:px-12 flex justify-between items-center text-xs md:text-sm font-serif tracking-wide opacity-90">
-            <span>Save the date</span>
-            <span className="hidden sm:inline">Check-in starts</span>
-            <span className="hidden sm:inline">Event begins at</span>
-            <span>See you there</span>
-          </div>
+
 
           {/* Massive Typography Background */}
           <div className="absolute top-[45%] md:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none px-2">
