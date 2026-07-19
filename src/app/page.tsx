@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import VisualDiaryGallery from "@/components/VisualDiaryGallery";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -216,69 +217,9 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* 5. PRODUCT SERVICE OR FEATURES (Champagne Background) */}
-        <section id="services" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE]">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl font-bold mb-4">Master Disciplines</h2>
-              <p className="opacity-80 max-w-2xl mx-auto">Specialized production suites tailored to your exact narrative needs.</p>
-            </div>
-
-            {/* Block 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2 md:order-1 shadow-xl">
-                <Image src="/portfolio/events/event-03.jpg" alt="Weddings" fill className="object-cover" />
-              </div>
-              <div className="order-1 md:order-2">
-                <h3 className="text-3xl font-bold mb-4">Weddings & Sacred Vows</h3>
-                <p className="opacity-80 mb-6 leading-relaxed">
-                  We document your most sacred day with an editorial, fly-on-the-wall approach. From rain-soaked vows to the final dance, we preserve the authentic resonance of your celebration.
-                </p>
-                <ul className="space-y-3 opacity-90 font-medium">
-                  <li className="flex items-center gap-2">✓ Full Day Coverage</li>
-                  <li className="flex items-center gap-2">✓ Heirloom Print Albums</li>
-                  <li className="flex items-center gap-2">✓ High-Res Digital Archive</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Block 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-              <div className="order-1">
-                <h3 className="text-3xl font-bold mb-4">Automotive Engineering</h3>
-                <p className="opacity-80 mb-6 leading-relaxed">
-                  Precision rig lighting, dusk circuit documentation, and dynamic panning shots. We capture the raw aerodynamic aggression and engineering beauty of high-performance machines.
-                </p>
-                <ul className="space-y-3 opacity-90 font-medium">
-                  <li className="flex items-center gap-2">✓ Twilight & Night Sessions</li>
-                  <li className="flex items-center gap-2">✓ Rig & Motion Blur Plates</li>
-                  <li className="flex items-center gap-2">✓ Private Garage Documentation</li>
-                </ul>
-              </div>
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2 shadow-xl">
-                <Image src="/portfolio/automotive/auto-01.jpg" alt="Automotive" fill className="object-cover" />
-              </div>
-            </div>
-
-            {/* Block 3 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2 md:order-1 shadow-xl">
-                <Image src="/portfolio/featured/featured-03.jpg" alt="Commercial" fill className="object-cover" />
-              </div>
-              <div className="order-1 md:order-2">
-                <h3 className="text-3xl font-bold mb-4">Commercial Architecture</h3>
-                <p className="opacity-80 mb-6 leading-relaxed">
-                  Elevate your brand with high-impact interior and architectural photography. Engineered for luxury lookbooks, hotel portfolios, and international marketing campaigns.
-                </p>
-                <ul className="space-y-3 opacity-90 font-medium">
-                  <li className="flex items-center gap-2">✓ Tilt-Shift Perspective Control</li>
-                  <li className="flex items-center gap-2">✓ Advanced Composite Lighting</li>
-                  <li className="flex items-center gap-2">✓ Commercial Usage Licensing</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+        
+        {/* 5. VISUAL DIARY GALLERY (Sangria Background) */}
+        <VisualDiaryGallery />
 
         {/* 6. TESTIMONIALS (Sangria Background) */}
         <section id="testimonials" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
