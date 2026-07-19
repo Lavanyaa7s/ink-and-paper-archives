@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import VisualDiaryGallery from "@/components/VisualDiaryGallery";
+import ServicesSection from "@/components/ServicesSection";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -233,8 +234,11 @@ export default function LandingPage() {
         {/* 5. VISUAL DIARY GALLERY (Sangria Background) */}
         <VisualDiaryGallery />
 
+        {/* 5.5 SERVICES (Champagne Background) */}
+        <ServicesSection />
+
         {/* 6. TESTIMONIALS (Sangria Background) */}
-        <section id="testimonials" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
+        <section id="testimonials" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE]">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Client Experiences</h2>
@@ -275,7 +279,7 @@ export default function LandingPage() {
         </section>
 
         {/* 7. OBJECTION HANDLING (FAQS) (Champagne Background) */}
-        <section id="faq" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE]">
+        <section id="faq" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
@@ -313,7 +317,7 @@ export default function LandingPage() {
         </section>
 
         {/* 8. ADDITIONAL CALL-TO-ACTION (Sangria Background) */}
-        <section className="py-32 px-6 bg-[#FAFCBE] text-[#92000A]">
+        <section className="py-32 px-6 bg-[#92000A] text-[#FAFCBE]">
           <div className="max-w-4xl mx-auto text-center bg-[#92000A] text-[#FAFCBE] rounded-2xl p-12 md:p-20 shadow-2xl border border-[#92000A]/20">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Ready to immortalize your legacy?
