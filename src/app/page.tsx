@@ -67,7 +67,7 @@ export default function LandingPage() {
               <h1 className="font-[family-name:var(--font-yeseva)] uppercase text-[14vw] md:text-[11vw] leading-none tracking-tight pr-4 md:pr-10">
                 MAINZ MEDIA
               </h1>
-              <div className="absolute -bottom-[20%] md:-bottom-[30%] lg:-bottom-[35%] right-[2%] md:right-[8%] text-3xl md:text-5xl lg:text-6xl font-[family-name:var(--font-great-vibes)] tracking-wide -rotate-2">
+              <div className="absolute -bottom-[20%] md:-bottom-[30%] lg:-bottom-[35%] right-[2%] md:right-[8%] text-3xl md:text-5xl lg:text-6xl font-[family-name:var(--font-shrikhand)] tracking-wide">
                 Maindha
               </div>
             </div>

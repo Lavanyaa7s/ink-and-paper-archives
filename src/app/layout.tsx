@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Bebas_Neue, Space_Grotesk, JetBrains_Mono, Bodoni_Moda, Great_Vibes, Yeseva_One } from "next/font/google";
+import { Inter, Bebas_Neue, Space_Grotesk, JetBrains_Mono, Bodoni_Moda, Shrikhand, Yeseva_One } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 
@@ -34,10 +34,10 @@ const bodoni = Bodoni_Moda({
   display: "swap",
 });
 
-const greatVibes = Great_Vibes({
+const shrikhand = Shrikhand({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-great-vibes",
+  variable: "--font-shrikhand",
   display: "swap",
 });
 
@@ -83,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${bebasNeue.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${bodoni.variable} ${greatVibes.variable} ${yesevaOne.variable}`}
+      className={`${inter.variable} ${bebasNeue.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${bodoni.variable} ${shrikhand.variable} ${yesevaOne.variable}`}
     >
       <body className="min-h-screen bg-background text-foreground antialiased">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
