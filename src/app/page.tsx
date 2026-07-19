@@ -33,10 +33,10 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#1A1A00] text-[#FFFFCC] font-sans selection:bg-[#FFFFCC] selection:text-[#1A1A00]">
+    <div className="min-h-screen bg-[#92000A] text-[#FAFCBE] font-sans selection:bg-[#FAFCBE] selection:text-[#92000A]">
       
       {/* 1. SIMPLE & STICKY HEADER */}
-      <header className="sticky top-0 z-50 w-full bg-[#1A1A00]/95 backdrop-blur-md border-b border-[#FFFFCC]/10 px-6 py-4">
+      <header className="sticky top-0 z-50 w-full bg-[#92000A]/95 backdrop-blur-md border-b border-[#FAFCBE]/10 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/" className="font-extrabold text-xl tracking-tight uppercase">
             MAINZ MEDIA
@@ -48,7 +48,7 @@ export default function LandingPage() {
           </div>
           <Link 
             href="/booking" 
-            className="bg-[#FFFFCC] text-[#1A1A00] px-6 py-2 rounded-md font-bold text-sm hover:bg-white transition-colors"
+            className="bg-[#FAFCBE] text-[#92000A] px-6 py-2 rounded-md font-bold text-sm hover:bg-white transition-colors"
           >
             BOOK NOW
           </Link>
@@ -71,7 +71,7 @@ export default function LandingPage() {
               </p>
               <Link 
                 href="/pricing" 
-                className="bg-[#FFFFCC] text-[#1A1A00] px-8 py-4 rounded-md font-bold text-lg hover:bg-white transition-colors w-full sm:w-auto text-center shadow-lg"
+                className="bg-[#FAFCBE] text-[#92000A] px-8 py-4 rounded-md font-bold text-lg hover:bg-white transition-colors w-full sm:w-auto text-center shadow-lg"
               >
                 VIEW PORTFOLIO & RATES
               </Link>
@@ -81,7 +81,7 @@ export default function LandingPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative aspect-[4/5] md:aspect-square rounded-xl overflow-hidden border border-[#FFFFCC]/20 shadow-2xl"
+              className="relative aspect-[4/5] md:aspect-square rounded-xl overflow-hidden border border-[#FAFCBE]/20 shadow-2xl"
             >
               <Image 
                 src="/portraitMaindha.png" 
@@ -95,7 +95,7 @@ export default function LandingPage() {
         </section>
 
         {/* 3. SOCIAL PROOF */}
-        <section className="bg-[#FFFFCC]/5 border-y border-[#FFFFCC]/10 py-10 px-6">
+        <section className="bg-[#FAFCBE]/5 border-y border-[#FAFCBE]/10 py-10 px-6">
           <div className="max-w-6xl mx-auto flex flex-col items-center">
             <p className="text-sm font-bold tracking-widest uppercase opacity-60 mb-6">
               Trusted by 50+ High-Net-Worth Clients & Brands
@@ -103,7 +103,7 @@ export default function LandingPage() {
             <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-80">
               {/* Star Rating Representation */}
               <div className="flex items-center gap-2">
-                <div className="flex text-[#FFFFCC] text-xl">★★★★★</div>
+                <div className="flex text-[#FAFCBE] text-xl">★★★★★</div>
                 <span className="font-bold">5.0 / 5.0</span>
               </div>
               <div className="text-lg font-bold uppercase tracking-wider">Vogue MY</div>
@@ -138,9 +138,9 @@ export default function LandingPage() {
               <motion.div 
                 key={i}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                className="bg-[#FFFFCC]/5 p-8 rounded-xl border border-[#FFFFCC]/10 text-center"
+                className="bg-[#FAFCBE]/5 p-8 rounded-xl border border-[#FAFCBE]/10 text-center"
               >
-                <div className="w-12 h-12 rounded-full bg-[#FFFFCC] text-[#1A1A00] flex items-center justify-center mx-auto mb-6 text-xl font-bold">
+                <div className="w-12 h-12 rounded-full bg-[#FAFCBE] text-[#92000A] flex items-center justify-center mx-auto mb-6 text-xl font-bold">
                   {i + 1}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
@@ -151,7 +151,7 @@ export default function LandingPage() {
         </section>
 
         {/* 5. PRODUCT SERVICE OR FEATURES (Alternating Blocks) */}
-        <section id="services" className="py-24 px-6 bg-[#FFFFCC]/5 border-y border-[#FFFFCC]/10">
+        <section id="services" className="py-24 px-6 bg-[#FAFCBE]/5 border-y border-[#FAFCBE]/10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
               <h2 className="text-4xl font-bold mb-4">Master Disciplines</h2>
@@ -160,7 +160,7 @@ export default function LandingPage() {
 
             {/* Block 1: Image Left, Text Right */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FFFFCC]/20 order-2 md:order-1">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2 md:order-1">
                 <Image src="/portfolio/events/event-03.jpg" alt="Weddings" fill className="object-cover" />
               </div>
               <div className="order-1 md:order-2">
@@ -189,14 +189,14 @@ export default function LandingPage() {
                   <li className="flex items-center gap-2">✓ Private Garage Documentation</li>
                 </ul>
               </div>
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FFFFCC]/20 order-2">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2">
                 <Image src="/portfolio/automotive/auto-01.jpg" alt="Automotive" fill className="object-cover" />
               </div>
             </div>
 
             {/* Block 3: Image Left, Text Right */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FFFFCC]/20 order-2 md:order-1">
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FAFCBE]/20 order-2 md:order-1">
                 <Image src="/portfolio/featured/featured-03.jpg" alt="Commercial" fill className="object-cover" />
               </div>
               <div className="order-1 md:order-2">
@@ -239,7 +239,7 @@ export default function LandingPage() {
                 tag: "Creative Director"
               }
             ].map((test, i) => (
-              <div key={i} className="bg-[#FFFFCC] text-[#1A1A00] p-8 rounded-xl flex flex-col justify-between">
+              <div key={i} className="bg-[#FAFCBE] text-[#92000A] p-8 rounded-xl flex flex-col justify-between">
                 <div>
                   <div className="text-2xl mb-4">★★★★★</div>
                   <p className="text-sm font-medium leading-relaxed italic mb-8">"{test.quote}"</p>
@@ -254,7 +254,7 @@ export default function LandingPage() {
         </section>
 
         {/* 7. OBJECTION HANDLING (FAQS) */}
-        <section id="faq" className="py-24 px-6 bg-[#FFFFCC]/5 border-y border-[#FFFFCC]/10">
+        <section id="faq" className="py-24 px-6 bg-[#FAFCBE]/5 border-y border-[#FAFCBE]/10">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
@@ -263,10 +263,10 @@ export default function LandingPage() {
 
             <div className="space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="border border-[#FFFFCC]/20 rounded-lg overflow-hidden bg-[#1A1A00]">
+                <div key={i} className="border border-[#FAFCBE]/20 rounded-lg overflow-hidden bg-[#92000A]">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-[#FFFFCC]/5 transition-colors"
+                    className="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-[#FAFCBE]/5 transition-colors"
                   >
                     <span>{faq.question}</span>
                     <span className="text-2xl font-light">{openFaq === i ? '−' : '+'}</span>
@@ -279,7 +279,7 @@ export default function LandingPage() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-5 pt-1 text-sm opacity-80 leading-relaxed border-t border-[#FFFFCC]/10">
+                        <div className="px-6 pb-5 pt-1 text-sm opacity-80 leading-relaxed border-t border-[#FAFCBE]/10">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -293,7 +293,7 @@ export default function LandingPage() {
 
         {/* 8. ADDITIONAL CALL-TO-ACTION */}
         <section className="py-32 px-6">
-          <div className="max-w-4xl mx-auto text-center bg-[#FFFFCC] text-[#1A1A00] rounded-2xl p-12 md:p-20 shadow-2xl">
+          <div className="max-w-4xl mx-auto text-center bg-[#FAFCBE] text-[#92000A] rounded-2xl p-12 md:p-20 shadow-2xl">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Ready to immortalize your legacy?
             </h2>
@@ -302,7 +302,7 @@ export default function LandingPage() {
             </p>
             <Link 
               href="/booking" 
-              className="bg-[#1A1A00] text-[#FFFFCC] px-10 py-5 rounded-md font-bold text-lg hover:bg-black transition-colors inline-block shadow-lg"
+              className="bg-[#92000A] text-[#FAFCBE] px-10 py-5 rounded-md font-bold text-lg hover:bg-black transition-colors inline-block shadow-lg"
             >
               BOOK YOUR SESSION NOW
             </Link>
@@ -311,7 +311,7 @@ export default function LandingPage() {
       </main>
 
       {/* 9. SIMPLE FOOTER */}
-      <footer className="border-t border-[#FFFFCC]/10 py-12 px-6 bg-[#1A1A00]">
+      <footer className="border-t border-[#FAFCBE]/10 py-12 px-6 bg-[#92000A]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="font-extrabold text-xl tracking-tight uppercase">
             MAINZ MEDIA
