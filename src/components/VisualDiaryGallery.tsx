@@ -91,18 +91,32 @@ export default function VisualDiaryGallery() {
               modifier: 1.5,
               slideShadows: false,
             }}
-            modules={[EffectCoverflow]}
-            className="w-full h-full !pb-12"
+            navigation={{
+              nextEl: '.gallery-next',
+              prevEl: '.gallery-prev',
+            }}
+            modules={[EffectCoverflow, Navigation]}
+            className="w-full h-full !pb-8"
             key={activeCategory} // Force re-render on category change to center slides properly
           >
             {filteredImages.map((img, index) => (
               <SwiperSlide key={index} style={{ width: 'auto' }}>
-                <div className="w-[300px] sm:w-[400px] md:w-[450px] lg:w-[480px] aspect-[4/5] relative rounded-2xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] mx-auto">
+                <div className="w-[300px] sm:w-[400px] md:w-[450px] lg:w-[480px] aspect-[4/5] relative rounded-2xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] mx-auto border border-[#FAFCBE]/10">
                   <Image src={img.src} alt={img.category} fill className="object-cover" />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {/* Custom Navigation Buttons */}
+          <div className="flex justify-center items-center gap-4 mt-8">
+            <button className="gallery-prev w-12 h-12 rounded-full border border-[#FAFCBE]/40 flex items-center justify-center text-[#FAFCBE] hover:bg-[#FAFCBE]/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button className="gallery-next w-12 h-12 rounded-full border border-[#FAFCBE]/40 flex items-center justify-center text-[#FAFCBE] hover:bg-[#FAFCBE]/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>
