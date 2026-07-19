@@ -84,7 +84,7 @@ export default function LandingPage() {
               className="relative aspect-[4/5] md:aspect-square rounded-xl overflow-hidden border border-[#FFFFCC]/20 shadow-2xl"
             >
               <Image 
-                src="/portfolio/wedding/wedding-01.jpg" 
+                src="/portfolio/featured/featured-01.jpg" 
                 alt="Mainz Media Photography" 
                 fill 
                 className="object-cover"
@@ -161,7 +161,7 @@ export default function LandingPage() {
             {/* Block 1: Image Left, Text Right */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FFFFCC]/20 order-2 md:order-1">
-                <Image src="/portfolio/wedding/wedding-01.jpg" alt="Weddings" fill className="object-cover" />
+                <Image src="/portfolio/events/event-03.jpg" alt="Weddings" fill className="object-cover" />
               </div>
               <div className="order-1 md:order-2">
                 <h3 className="text-3xl font-bold mb-4">Weddings & Sacred Vows</h3>
@@ -190,14 +190,14 @@ export default function LandingPage() {
                 </ul>
               </div>
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FFFFCC]/20 order-2">
-                <Image src="/portfolio/automotive/automotive-01.jpg" alt="Automotive" fill className="object-cover" />
+                <Image src="/portfolio/automotive/auto-01.jpg" alt="Automotive" fill className="object-cover" />
               </div>
             </div>
 
             {/* Block 3: Image Left, Text Right */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[#FFFFCC]/20 order-2 md:order-1">
-                <Image src="/portfolio/commercial/commercial-01.jpg" alt="Commercial" fill className="object-cover" />
+                <Image src="/portfolio/featured/featured-03.jpg" alt="Commercial" fill className="object-cover" />
               </div>
               <div className="order-1 md:order-2">
                 <h3 className="text-3xl font-bold mb-4">Commercial Architecture</h3>
