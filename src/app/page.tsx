@@ -84,10 +84,10 @@ export default function LandingPage() {
               className="relative aspect-[4/5] md:aspect-square rounded-xl overflow-hidden border border-[#FFFFCC]/20 shadow-2xl"
             >
               <Image 
-                src="/portfolio/featured/featured-01.jpg" 
-                alt="Mainz Media Photography" 
+                src="/portfolio/photographer/maindhaa.png" 
+                alt="Maindha Portrait" 
                 fill 
-                className="object-cover"
+                className="object-contain object-bottom drop-shadow-2xl"
                 priority
               />
             </motion.div>
