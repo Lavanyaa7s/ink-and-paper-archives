@@ -427,6 +427,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm font-medium opacity-80">
             <a href="mailto:maindha@gmail.com" className="hover:opacity-100 transition-opacity">maindha@gmail.com</a>
             <a href="tel:+60163228337" className="hover:opacity-100 transition-opacity">+60 16-322 8337</a>
+            <a href="https://www.instagram.com/mainz.media?igsh=cmF5amE3aHN2cGhw" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Instagram</a>
             <span>Kuala Lumpur, Malaysia</span>
           </div>
 

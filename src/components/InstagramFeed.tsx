@@ -22,9 +22,12 @@ export default function InstagramFeed() {
             <p className="opacity-80 mt-2 font-medium">@mainzmedia</p>
           </div>
           <a 
-            href="#" 
-            className="text-sm font-bold uppercase tracking-widest border-b border-[#EFE9E9]/30 pb-1 hover:border-[#EFE9E9] transition-colors"
+            href="https://www.instagram.com/mainz.media?igsh=cmF5amE3aHN2cGhw" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-[#EFE9E9]/20 hover:border-[#EFE9E9] px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest transition-colors"
           >
+            <InstagramIcon className="w-4 h-4" />
             View Instagram
           </a>
         </div>
@@ -33,8 +36,10 @@ export default function InstagramFeed() {
           {instaImages.map((src, index) => (
             <a 
               key={index} 
-              href="#" 
-              className="relative aspect-square group overflow-hidden block bg-black/20"
+              href="https://www.instagram.com/mainz.media?igsh=cmF5amE3aHN2cGhw" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="relative aspect-square group overflow-hidden block bg-[#5A2132]"
             >
               <Image 
                 src={src} 
