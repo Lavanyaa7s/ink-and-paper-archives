@@ -88,7 +88,7 @@ export default function LandingPage() {
 
 
           {/* Massive Typography Background */}
-          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-[calc(50%+15px)] -translate-y-1/2 w-full text-center z-10 pointer-events-none px-2">
+          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-[calc(50%_+_15px)] -translate-y-1/2 w-full text-center z-10 pointer-events-none px-2">
             <div className="relative inline-block">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
@@ -139,7 +139,7 @@ export default function LandingPage() {
           </div>
 
           {/* Intertwined Text Mask (Desktop Only) */}
-          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-[calc(50%+15px)] -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 hidden md:block">
+          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-[calc(50%_+_15px)] -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 hidden md:block">
             <div className="relative inline-block" style={{ clipPath: 'polygon(88% 0, 100% 0, 100% 100%, 88% 100%)' }}>
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
@@ -150,6 +150,18 @@ export default function LandingPage() {
               >
                 <span>MAINZ</span> <span>MEDIA</span>
               </motion.h1>
+
+              <motion.p 
+                className="absolute -bottom-8 md:-bottom-10 left-1/2 -translate-x-1/2 w-max text-center font-sans text-[10px] md:text-xs tracking-[0.2em] uppercase font-semibold z-10 opacity-0 invisible"
+              >
+                Cinematic Videography & Photography for Brands and Businesses
+              </motion.p>
+
+              <motion.div 
+                className="absolute -bottom-[15%] md:-bottom-[12%] lg:-bottom-[18%] right-[-2%] md:right-[5%] lg:right-[8%] text-4xl md:text-2xl lg:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide z-10 hidden md:block opacity-0 invisible"
+              >
+                Maindha
+              </motion.div>
             </div>
           </div>
 
