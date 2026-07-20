@@ -104,7 +104,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 1, delay: 1.2 }}
-                className="absolute -bottom-8 md:-bottom-12 left-1/2 -translate-x-1/2 w-max text-center font-sans text-xs md:text-sm tracking-[0.25em] uppercase text-[#EFE9E9]/80 font-bold z-10"
+                className="absolute -bottom-[65px] md:-bottom-12 left-1/2 -translate-x-1/2 w-[90vw] md:w-max text-center font-sans text-[10px] md:text-sm tracking-[0.2em] md:tracking-[0.25em] leading-relaxed md:leading-normal uppercase text-[#EFE9E9]/80 font-bold z-10"
               >
                 Cinematic Videography & Photography for Brands and Businesses
               </motion.p>
@@ -131,7 +131,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-                className="absolute -bottom-[20%] left-1/2 -translate-x-1/2 text-3xl sm:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#EFE9E9]"
+                className="absolute -bottom-[10px] left-1/2 -translate-x-1/2 text-3xl sm:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#EFE9E9]"
               >
                 Maindha
               </motion.div>
