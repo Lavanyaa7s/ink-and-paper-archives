@@ -6,10 +6,15 @@ import VisualDiaryGallery from "@/components/VisualDiaryGallery";
 import ServicesSection from "@/components/ServicesSection";
 import InstagramFeed from "@/components/InstagramFeed";
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 
 export default function LandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const { scrollY } = useScroll();
+  const portraitY = useTransform(scrollY, [0, 800], [0, -12]);
+  const portraitScale = useTransform(scrollY, [0, 800], [1, 1.04]);
+  const textY = useTransform(scrollY, [0, 800], [0, -40]);
 
   const faqs = [
     {
@@ -38,23 +43,30 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#5A2132] text-[#EFE9E9] font-sans selection:bg-[#EFE9E9] selection:text-[#5A2132]">
       
-      {/* 1. SIMPLE HEADER (Transparent, No Bar) */}
+      {/* 1. SIMPLE HEADER */}
       <header className="absolute top-0 left-0 w-full z-50 px-6 py-8 md:py-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Link href="/" className="relative w-[150px] md:w-[180px] h-[40px] md:h-[50px] block">
-            <Image src="/logo.jpg" alt="Mainz Media Logo" fill className="object-contain object-left" priority />
-          </Link>
-          <div className="hidden md:flex items-center gap-8 font-medium text-sm">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0 }}>
+            <Link href="/" className="relative w-[150px] md:w-[180px] h-[40px] md:h-[50px] block">
+              <Image src="/logo.jpg" alt="Mainz Media Logo" fill className="object-contain object-left" priority />
+            </Link>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.2 }}
+            className="hidden md:flex items-center gap-14 font-medium text-sm"
+          >
             <Link href="#services" className="hover:opacity-70 transition-opacity">Services</Link>
             <Link href="#testimonials" className="hover:opacity-70 transition-opacity">Testimonials</Link>
             <Link href="#faq" className="hover:opacity-70 transition-opacity">FAQ</Link>
-          </div>
-          <Link 
-            href="#booking" 
-            className="bg-[#EFE9E9] text-[#5A2132] px-6 py-2 rounded-md font-bold text-sm hover:bg-white transition-colors shadow-lg"
-          >
-            BOOK NOW
-          </Link>
+          </motion.div>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.0 }}>
+            <Link 
+              href="#booking" 
+              className="bg-[#EFE9E9] text-[#5A2132] px-6 py-2 rounded-md font-bold text-sm inline-block shadow-lg hover:scale-[1.04] hover:shadow-xl transition-all duration-200"
+            >
+              BOOK NOW
+            </Link>
+          </motion.div>
         </div>
       </header>
 
@@ -70,7 +82,7 @@ export default function LandingPage() {
 
           {/* Cinematic Noise Texture */}
           <div 
-            className="absolute inset-0 pointer-events-none opacity-[0.04] mix-blend-overlay z-0" 
+            className="absolute inset-[-10%] animate-grain pointer-events-none opacity-[0.04] mix-blend-overlay z-0" 
             style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }} 
           />
 
@@ -81,7 +93,8 @@ export default function LandingPage() {
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
                 animate={{ opacity: 1, y: 0 }} 
-                transition={{ duration: 1, ease: "easeOut" }}
+                transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+                style={{ y: textY }}
                 className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] md:text-[11vw] lg:text-[10vw] leading-none md:leading-none tracking-tight whitespace-nowrap flex flex-col md:inline-block relative z-10"
               >
                 <span>MAINZ</span> <span>MEDIA</span>
@@ -89,7 +102,7 @@ export default function LandingPage() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
-                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
                 className="absolute -bottom-[20%] md:-bottom-[15%] lg:-bottom-[20%] right-[-5%] md:right-[2%] lg:right-[5%] text-5xl md:text-3xl lg:text-5xl font-[family-name:var(--font-shrikhand)] tracking-wide z-10 hidden md:block"
               >
                 Maindha
@@ -107,7 +120,7 @@ export default function LandingPage() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
-                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
                 className="absolute -bottom-[20%] left-1/2 -translate-x-1/2 text-3xl sm:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#EFE9E9]"
               >
                 Maindha
@@ -115,13 +128,31 @@ export default function LandingPage() {
             </div>
           </div>
 
+          {/* Intertwined Text Mask (Desktop Only) */}
+          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 hidden md:block">
+            <div className="relative inline-block" style={{ clipPath: 'polygon(88% 0, 100% 0, 100% 100%, 88% 100%)' }}>
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+                style={{ y: textY }}
+                className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] md:text-[11vw] lg:text-[10vw] leading-none md:leading-none tracking-tight whitespace-nowrap flex flex-col md:inline-block relative"
+              >
+                <span>MAINZ</span> <span>MEDIA</span>
+              </motion.h1>
+            </div>
+          </div>
+
           {/* Foreground Portrait Cutout */}
           <motion.div 
-            initial={{ opacity: 0, y: 100 }} 
+            initial={{ opacity: 0, y: 50 }} 
             animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
+            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+            style={{ scale: portraitScale, y: portraitY }}
             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-[80%] md:w-[60%] lg:w-[45%] max-w-[750px] h-[75%] md:h-[80%] lg:h-[85%] z-50 pointer-events-none flex flex-col justify-end"
           >
+            {/* Subtle Spotlight behind portrait */}
+            <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#EFE9E9] opacity-10 blur-[80px] md:blur-[100px] rounded-full pointer-events-none -z-10" />
             <div className="relative w-full h-full">
               {/* Floor Shadow for grounding */}
               <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-[70%] h-[40px] bg-black/60 blur-[20px] rounded-[100%] pointer-events-none -z-10" />
