@@ -87,15 +87,43 @@ export default function LandingPage() {
           />
 
 
-          {/* Massive Typography Background */}
-          <div className="absolute top-[18%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -ml-[15px] -translate-y-1/2 w-full text-center z-10 pointer-events-none px-2">
+          {/* Mobile Hero Text — clean stacked layout */}
+          <div className="absolute top-[6%] left-0 w-full text-center z-10 pointer-events-none px-4 flex flex-col items-center gap-2 md:hidden">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+              className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] leading-[0.85] tracking-tight flex flex-col text-white/90"
+            >
+              <span>MAINZ</span><span>MEDIA</span>
+            </motion.h1>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+              className="text-3xl sm:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#EFE9E9]"
+            >
+              Maindha
+            </motion.div>
+            <motion.p 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              transition={{ duration: 1, delay: 1.2 }}
+              className="font-sans text-[10px] tracking-[0.2em] leading-relaxed uppercase text-[#EFE9E9]/70 font-bold max-w-[90vw]"
+            >
+              Cinematic Videography &amp; Photography for Brands and Businesses
+            </motion.p>
+          </div>
+
+          {/* Desktop Hero Text — absolute centered with parallax */}
+          <div className="absolute top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -ml-[15px] -translate-y-1/2 w-full text-center z-10 pointer-events-none px-2 hidden md:block">
             <div className="relative inline-block">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
                 style={{ y: textY }}
-                className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] md:text-[11vw] lg:text-[10vw] leading-none md:leading-none tracking-tight whitespace-nowrap flex flex-col md:inline-block relative z-10 text-white/90"
+                className="font-[family-name:var(--font-yeseva)] uppercase text-[11vw] lg:text-[10vw] leading-none tracking-tight whitespace-nowrap inline-block relative z-10 text-white/90"
               >
                 <span>MAINZ</span> <span>MEDIA</span>
               </motion.h1>
@@ -104,34 +132,16 @@ export default function LandingPage() {
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 1, delay: 1.2 }}
-                className="absolute -bottom-[90px] md:-bottom-12 left-1/2 -translate-x-1/2 w-[90vw] md:w-max text-center font-sans text-[10px] md:text-sm tracking-[0.2em] md:tracking-[0.25em] leading-relaxed md:leading-normal uppercase text-[#EFE9E9]/80 font-bold z-10"
+                className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-max text-center font-sans text-sm tracking-[0.25em] leading-normal uppercase text-[#EFE9E9]/80 font-bold z-10"
               >
-                Cinematic Videography & Photography for Brands and Businesses
+                Cinematic Videography &amp; Photography for Brands and Businesses
               </motion.p>
 
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-                className="absolute -bottom-[15%] md:-bottom-[12%] lg:-bottom-[18%] right-[-2%] md:right-[5%] lg:right-[8%] text-4xl md:text-2xl lg:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide z-10 hidden md:block opacity-80"
-              >
-                Maindha
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Foreground Signature (Mobile Only) */}
-          <div className="absolute top-[18%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 md:hidden">
-            <div className="relative inline-block">
-              {/* Invisible placeholder to match dimensions */}
-              <h1 className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] leading-none tracking-tight whitespace-nowrap flex flex-col opacity-0">
-                <span>MAINZ</span> <span>MEDIA</span>
-              </h1>
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }} 
-                animate={{ opacity: 1, scale: 1 }} 
-                transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-                className="absolute -bottom-[45px] left-1/2 -translate-x-1/2 text-3xl sm:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#EFE9E9]"
+                className="absolute -bottom-[12%] lg:-bottom-[18%] right-[5%] lg:right-[8%] text-2xl lg:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide z-10 opacity-80"
               >
                 Maindha
               </motion.div>
@@ -139,7 +149,7 @@ export default function LandingPage() {
           </div>
 
           {/* Intertwined Text Mask (Desktop Only) */}
-          <div className="absolute top-[18%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -ml-[15px] -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 hidden md:block">
+          <div className="absolute top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -ml-[15px] -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 hidden md:block">
             <div className="relative inline-block" style={{ clipPath: 'polygon(88% 0, 100% 0, 100% 100%, 88% 100%)' }}>
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
@@ -159,7 +169,7 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             style={{ scale: portraitScale, y: portraitY }}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] sm:w-[95%] md:w-[75%] lg:w-[58%] max-w-[900px] h-[80%] md:h-[85%] lg:h-[90%] z-50 pointer-events-none flex flex-col justify-end"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] sm:w-[95%] md:w-[75%] lg:w-[58%] max-w-[900px] h-[65%] md:h-[85%] lg:h-[90%] z-50 pointer-events-none flex flex-col justify-end"
           >
             {/* Subtle Spotlight behind portrait */}
             <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#EFE9E9] opacity-10 blur-[80px] md:blur-[100px] rounded-full pointer-events-none -z-10" />
