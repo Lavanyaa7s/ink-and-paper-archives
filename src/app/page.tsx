@@ -47,8 +47,8 @@ export default function LandingPage() {
       <header className="absolute top-0 left-0 w-full z-50 px-6 py-8 md:py-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0 }}>
-            <Link href="/" className="relative w-[150px] md:w-[180px] h-[40px] md:h-[50px] block filter invert mix-blend-screen opacity-90 p-1">
-              <Image src="/logo.jpg" alt="Mainz Media Logo" fill className="object-contain object-left" priority />
+            <Link href="/" className="relative w-[150px] md:w-[180px] h-[40px] md:h-[50px] block transition-transform hover:scale-105">
+              <Image src="/logo.png" alt="Mainz Media Logo" fill className="object-contain object-left" priority />
             </Link>
           </motion.div>
           <motion.div 
