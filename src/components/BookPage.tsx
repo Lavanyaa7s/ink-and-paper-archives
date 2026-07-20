@@ -28,10 +28,10 @@ export function BookPage({ chapter, chapterTitle, page, next, prev, children }: 
         animate={{ opacity: ready ? 1 : 0, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.98 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="relative min-h-screen bg-[#92000A] text-[#FAFCBE] overflow-hidden select-none font-sans selection:bg-[#FAFCBE] selection:text-[#92000A]"
+        className="relative min-h-screen bg-[#5A2132] text-[#EFE9E9] overflow-hidden select-none font-sans selection:bg-[#EFE9E9] selection:text-[#5A2132]"
       >
         {/* Simple & Sticky Header Equivalent for Subpages */}
-        <header className="sticky top-0 z-50 w-full bg-[#92000A]/95 backdrop-blur-md border-b border-[#FAFCBE]/10 px-6 py-4">
+        <header className="sticky top-0 z-50 w-full bg-[#5A2132]/95 backdrop-blur-md border-b border-[#EFE9E9]/10 px-6 py-4">
           <div className="max-w-6xl mx-auto flex items-center justify-between">
             <Link href="/" className="font-extrabold text-xl tracking-tight uppercase flex items-center gap-2 hover:opacity-70 transition-opacity">
               <span>←</span>
@@ -52,7 +52,7 @@ export function BookPage({ chapter, chapterTitle, page, next, prev, children }: 
         </main>
 
         {/* Simple Footer Navigation for Subpages */}
-        <footer className="fixed bottom-0 inset-x-0 z-50 border-t border-[#FAFCBE]/10 bg-[#92000A]/95 backdrop-blur-md px-6 py-4">
+        <footer className="fixed bottom-0 inset-x-0 z-50 border-t border-[#EFE9E9]/10 bg-[#5A2132]/95 backdrop-blur-md px-6 py-4">
           <div className="max-w-6xl mx-auto flex items-center justify-between font-bold text-sm uppercase tracking-widest">
             <div className="opacity-80">
               {page}

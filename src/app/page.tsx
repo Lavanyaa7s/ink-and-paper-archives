@@ -36,7 +36,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#92000A] text-[#FAFCBE] font-sans selection:bg-[#FAFCBE] selection:text-[#92000A]">
+    <div className="min-h-screen bg-[#5A2132] text-[#EFE9E9] font-sans selection:bg-[#EFE9E9] selection:text-[#5A2132]">
       
       {/* 1. SIMPLE HEADER (Transparent, No Bar) */}
       <header className="absolute top-0 left-0 w-full z-50 px-6 py-8 md:py-10">
@@ -51,7 +51,7 @@ export default function LandingPage() {
           </div>
           <Link 
             href="#booking" 
-            className="bg-[#FAFCBE] text-[#92000A] px-6 py-2 rounded-md font-bold text-sm hover:bg-white transition-colors shadow-lg"
+            className="bg-[#EFE9E9] text-[#5A2132] px-6 py-2 rounded-md font-bold text-sm hover:bg-white transition-colors shadow-lg"
           >
             BOOK NOW
           </Link>
@@ -60,7 +60,7 @@ export default function LandingPage() {
 
       <main>
         {/* 2. HERO SECTION (Exactly matching the user's uploaded image) */}
-        <section className="relative w-full h-screen min-h-[600px] bg-[#92000A] text-[#FAFCBE] overflow-hidden flex flex-col justify-between pt-8 md:pt-12">
+        <section className="relative w-full h-screen min-h-[600px] bg-[#5A2132] text-[#EFE9E9] overflow-hidden flex flex-col justify-between pt-8 md:pt-12">
           
 
 
@@ -97,7 +97,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-[20%] left-1/2 -translate-x-1/2 text-3xl sm:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#FAFCBE]"
+                className="absolute -bottom-[20%] left-1/2 -translate-x-1/2 text-3xl sm:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide text-[#EFE9E9]"
               >
                 Maindha
               </motion.div>
@@ -122,14 +122,14 @@ export default function LandingPage() {
         </section>
 
         {/* 3. SOCIAL PROOF (Champagne Background) */}
-        <section className="bg-[#FAFCBE] text-[#92000A] py-12 px-6">
+        <section className="bg-[#EFE9E9] text-[#5A2132] py-12 px-6">
           <div className="max-w-6xl mx-auto flex flex-col items-center">
             <p className="text-sm font-bold tracking-widest uppercase opacity-70 mb-6">
               Trusted by 50+ High-Net-Worth Clients & Brands
             </p>
             <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
               <div className="flex items-center gap-2">
-                <div className="flex text-[#92000A] text-xl">★★★★★</div>
+                <div className="flex text-[#5A2132] text-xl">★★★★★</div>
                 <span className="font-bold">5.0 / 5.0</span>
               </div>
               <div className="text-lg font-bold uppercase tracking-wider">Vogue MY</div>
@@ -140,7 +140,7 @@ export default function LandingPage() {
         </section>
 
         {/* 4. BENEFITS & ADVANTAGES (Sangria Background) */}
-        <section className="py-24 px-6 bg-[#92000A] text-[#FAFCBE]">
+        <section className="py-24 px-6 bg-[#5A2132] text-[#EFE9E9]">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Why Choose Mainz Media?</h2>
@@ -165,9 +165,9 @@ export default function LandingPage() {
                 <motion.div 
                   key={i}
                   initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                  className="bg-[#FAFCBE]/10 p-8 rounded-xl border border-[#FAFCBE]/20 text-center"
+                  className="bg-[#EFE9E9]/10 p-8 rounded-xl border border-[#EFE9E9]/20 text-center"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[#FAFCBE] text-[#92000A] flex items-center justify-center mx-auto mb-6 text-xl font-bold">
+                  <div className="w-12 h-12 rounded-full bg-[#EFE9E9] text-[#5A2132] flex items-center justify-center mx-auto mb-6 text-xl font-bold">
                     {i + 1}
                   </div>
                   <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
@@ -180,7 +180,7 @@ export default function LandingPage() {
 
         
         {/* 4.5 PACKAGES & INVESTMENT (Champagne Background) */}
-        <section id="packages" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
+        <section id="packages" className="py-24 px-6 bg-[#EFE9E9] text-[#5A2132]">
           <div className="max-w-6xl mx-auto">
             <motion.div 
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
@@ -194,7 +194,7 @@ export default function LandingPage() {
               {/* Package 1 */}
               <motion.div 
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+                className="bg-[#5A2132] text-[#EFE9E9] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl hover:-translate-y-2 transition-transform duration-300"
               >
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Portrait & Lifestyle</h3>
@@ -206,15 +206,15 @@ export default function LandingPage() {
                     <li className="flex items-center gap-3">✓ Creative Direction</li>
                   </ul>
                 </div>
-                <button className="w-full py-4 bg-[#FAFCBE] text-[#92000A] font-extrabold uppercase tracking-widest rounded-lg hover:bg-white transition-colors">Book Session</button>
+                <button className="w-full py-4 bg-[#EFE9E9] text-[#5A2132] font-extrabold uppercase tracking-widest rounded-lg hover:bg-white transition-colors">Book Session</button>
               </motion.div>
 
               {/* Package 2 */}
               <motion.div 
                 initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl scale-100 md:scale-105 border-4 border-[#92000A] relative hover:-translate-y-2 transition-transform duration-300 z-10"
+                className="bg-[#5A2132] text-[#EFE9E9] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl scale-100 md:scale-105 border-4 border-[#5A2132] relative hover:-translate-y-2 transition-transform duration-300 z-10"
               >
-                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#FAFCBE] text-[#92000A] px-6 py-1.5 text-sm font-black uppercase tracking-widest rounded-full whitespace-nowrap shadow-xl">Most Popular</div>
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#EFE9E9] text-[#5A2132] px-6 py-1.5 text-sm font-black uppercase tracking-widest rounded-full whitespace-nowrap shadow-xl">Most Popular</div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Wedding & Sacred Vows</h3>
                   <div className="text-4xl font-[family-name:var(--font-yeseva)] mb-8">RM 4,500<span className="text-sm font-sans opacity-70"> / day</span></div>
@@ -225,13 +225,13 @@ export default function LandingPage() {
                     <li className="flex items-center gap-3">✓ Premium Layflat Heirloom Album</li>
                   </ul>
                 </div>
-                <button className="w-full py-4 bg-[#FAFCBE] text-[#92000A] font-extrabold uppercase tracking-widest rounded-lg hover:bg-white transition-colors">Book Wedding</button>
+                <button className="w-full py-4 bg-[#EFE9E9] text-[#5A2132] font-extrabold uppercase tracking-widest rounded-lg hover:bg-white transition-colors">Book Wedding</button>
               </motion.div>
 
               {/* Package 3 */}
               <motion.div 
                 initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                className="bg-[#92000A] text-[#FAFCBE] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+                className="bg-[#5A2132] text-[#EFE9E9] p-8 md:p-10 rounded-2xl flex flex-col justify-between shadow-2xl hover:-translate-y-2 transition-transform duration-300"
               >
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Commercial & Auto</h3>
@@ -243,7 +243,7 @@ export default function LandingPage() {
                     <li className="flex items-center gap-3">✓ Rush 48-Hour Delivery</li>
                   </ul>
                 </div>
-                <button className="w-full py-4 border-2 border-[#FAFCBE] text-[#FAFCBE] font-extrabold uppercase tracking-widest rounded-lg hover:bg-[#FAFCBE] hover:text-[#92000A] transition-colors">Inquire Now</button>
+                <button className="w-full py-4 border-2 border-[#EFE9E9] text-[#EFE9E9] font-extrabold uppercase tracking-widest rounded-lg hover:bg-[#EFE9E9] hover:text-[#5A2132] transition-colors">Inquire Now</button>
               </motion.div>
             </div>
           </div>
@@ -257,7 +257,7 @@ export default function LandingPage() {
         <ServicesSection />
 
         {/* 6. TESTIMONIALS (Sangria Background) */}
-        <section id="testimonials" className="py-24 px-6 bg-[#92000A] text-[#FAFCBE]">
+        <section id="testimonials" className="py-24 px-6 bg-[#5A2132] text-[#EFE9E9]">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Client Experiences</h2>
@@ -282,9 +282,9 @@ export default function LandingPage() {
                   tag: "Creative Director"
                 }
               ].map((test, i) => (
-                <div key={i} className="bg-[#92000A] text-[#FAFCBE] p-8 rounded-xl flex flex-col justify-between shadow-xl">
+                <div key={i} className="bg-[#5A2132] text-[#EFE9E9] p-8 rounded-xl flex flex-col justify-between shadow-xl">
                   <div>
-                    <div className="text-2xl mb-4 text-[#FAFCBE]">★★★★★</div>
+                    <div className="text-2xl mb-4 text-[#EFE9E9]">★★★★★</div>
                     <p className="text-sm font-medium leading-relaxed italic mb-8">"{test.quote}"</p>
                   </div>
                   <div>
@@ -298,7 +298,7 @@ export default function LandingPage() {
         </section>
 
         {/* 7. OBJECTION HANDLING (FAQS) (Champagne Background) */}
-        <section id="faq" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A]">
+        <section id="faq" className="py-24 px-6 bg-[#EFE9E9] text-[#5A2132]">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
@@ -307,10 +307,10 @@ export default function LandingPage() {
 
             <div className="space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="border border-[#FAFCBE]/30 rounded-lg overflow-hidden bg-transparent">
+                <div key={i} className="border border-[#EFE9E9]/30 rounded-lg overflow-hidden bg-transparent">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-[#FAFCBE]/5 transition-colors"
+                    className="w-full px-6 py-4 text-left font-bold flex justify-between items-center hover:bg-[#EFE9E9]/5 transition-colors"
                   >
                     <span>{faq.question}</span>
                     <span className="text-2xl font-light">{openFaq === i ? '−' : '+'}</span>
@@ -323,7 +323,7 @@ export default function LandingPage() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-5 pt-1 text-sm opacity-80 leading-relaxed border-t border-[#FAFCBE]/10">
+                        <div className="px-6 pb-5 pt-1 text-sm opacity-80 leading-relaxed border-t border-[#EFE9E9]/10">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -336,8 +336,8 @@ export default function LandingPage() {
         </section>
 
         {/* 8. ADDITIONAL CALL-TO-ACTION (Sangria Background) */}
-        <section id="booking" className="py-32 px-6 bg-[#92000A] text-[#FAFCBE]">
-          <div className="max-w-4xl mx-auto text-center bg-[#92000A] text-[#FAFCBE] rounded-2xl p-12 md:p-20 shadow-2xl border border-[#92000A]/20">
+        <section id="booking" className="py-32 px-6 bg-[#5A2132] text-[#EFE9E9]">
+          <div className="max-w-4xl mx-auto text-center bg-[#5A2132] text-[#EFE9E9] rounded-2xl p-12 md:p-20 shadow-2xl border border-[#5A2132]/20">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Ready to immortalize your legacy?
             </h2>
@@ -346,7 +346,7 @@ export default function LandingPage() {
             </p>
             <a 
               href="mailto:maindha@gmail.com" 
-              className="bg-[#FAFCBE] text-[#92000A] px-10 py-5 rounded-md font-bold text-lg hover:bg-black hover:text-[#FAFCBE] transition-colors inline-block shadow-lg"
+              className="bg-[#EFE9E9] text-[#5A2132] px-10 py-5 rounded-md font-bold text-lg hover:bg-black hover:text-[#EFE9E9] transition-colors inline-block shadow-lg"
             >
               BOOK YOUR SESSION NOW
             </a>
@@ -358,7 +358,7 @@ export default function LandingPage() {
       </main>
 
       {/* 9. SIMPLE FOOTER (Champagne Background for visual closure) */}
-      <footer className="border-t border-[#FAFCBE]/10 py-12 px-6 bg-[#92000A] text-[#FAFCBE]">
+      <footer className="border-t border-[#EFE9E9]/10 py-12 px-6 bg-[#5A2132] text-[#EFE9E9]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="font-extrabold text-xl tracking-tight uppercase">
             MAINZ MEDIA

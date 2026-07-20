@@ -54,7 +54,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="py-24 px-6 bg-[#FAFCBE] text-[#92000A] overflow-hidden">
+    <section id="services" className="py-24 px-6 bg-[#EFE9E9] text-[#5A2132] overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ duration: 0.6 }} variants={fadeUp}
@@ -74,10 +74,10 @@ export default function ServicesSection() {
               viewport={{ once: true }} 
               transition={{ duration: 0.5, delay: index * 0.1 }} 
               variants={fadeUp}
-              className="bg-[#92000A] text-[#FAFCBE] rounded-2xl p-6 flex flex-col items-center text-center shadow-2xl hover:shadow-[0_20px_50px_rgba(146,0,10,0.4)] hover:-translate-y-2 transition-all duration-300 border border-[#92000A]"
+              className="bg-[#5A2132] text-[#EFE9E9] rounded-2xl p-6 flex flex-col items-center text-center shadow-2xl hover:shadow-[0_20px_50px_rgba(146,0,10,0.4)] hover:-translate-y-2 transition-all duration-300 border border-[#5A2132]"
             >
               {/* Image Container */}
-              <div className="w-full aspect-[4/3] relative rounded-2xl overflow-hidden mb-6 border border-[#FAFCBE]/10">
+              <div className="w-full aspect-[4/3] relative rounded-2xl overflow-hidden mb-6 border border-[#EFE9E9]/10">
                 <Image 
                   src={service.image} 
                   alt={service.title} 
