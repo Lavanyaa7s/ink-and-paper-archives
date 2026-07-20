@@ -41,8 +41,8 @@ export default function LandingPage() {
       {/* 1. SIMPLE HEADER (Transparent, No Bar) */}
       <header className="absolute top-0 left-0 w-full z-50 px-6 py-8 md:py-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Link href="/" className="font-[family-name:var(--font-yeseva)] text-2xl tracking-wide uppercase">
-            MAINZ MEDIA
+          <Link href="/" className="relative w-[150px] md:w-[180px] h-[40px] md:h-[50px] block">
+            <Image src="/logo.jpg" alt="Mainz Media Logo" fill className="object-contain object-left" priority />
           </Link>
           <div className="hidden md:flex items-center gap-8 font-medium text-sm">
             <Link href="#services" className="hover:opacity-70 transition-opacity">Services</Link>
@@ -59,9 +59,20 @@ export default function LandingPage() {
       </header>
 
       <main>
-        {/* 2. HERO SECTION (Exactly matching the user's uploaded image) */}
-        <section className="relative w-full h-screen min-h-[600px] bg-[#5A2132] text-[#EFE9E9] overflow-hidden flex flex-col justify-between pt-8 md:pt-12">
+        {/* 2. HERO SECTION */}
+        <section className="relative w-full h-screen min-h-[600px] bg-[#5A2132] text-[#EFE9E9] overflow-hidden flex flex-col justify-between pt-8 md:pt-12 shadow-[inset_0_0_150px_rgba(0,0,0,0.6)]">
           
+          {/* Abstract Radial Glows */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-[#92000A]/30 rounded-full blur-[100px] mix-blend-screen" />
+            <div className="absolute bottom-1/4 right-1/4 w-[500px] md:w-[700px] h-[500px] md:h-[700px] bg-[#3A1122]/50 rounded-full blur-[120px] mix-blend-multiply" />
+          </div>
+
+          {/* Cinematic Noise Texture */}
+          <div 
+            className="absolute inset-0 pointer-events-none opacity-[0.04] mix-blend-overlay z-0" 
+            style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }} 
+          />
 
 
           {/* Massive Typography Background */}
@@ -109,15 +120,20 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 100 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-[80%] md:w-[60%] lg:w-[45%] max-w-[750px] h-[75%] md:h-[80%] lg:h-[85%] z-50 pointer-events-none"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-[80%] md:w-[60%] lg:w-[45%] max-w-[750px] h-[75%] md:h-[80%] lg:h-[85%] z-50 pointer-events-none flex flex-col justify-end"
           >
-            <Image 
-              src="/portfolio/photographer/portraitMaindha.png" 
-              alt="Maindha Portrait" 
-              fill 
-              className="object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-50"
-              priority
-            />
+            <div className="relative w-full h-full">
+              {/* Floor Shadow for grounding */}
+              <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-[70%] h-[40px] bg-black/60 blur-[20px] rounded-[100%] pointer-events-none -z-10" />
+              
+              <Image 
+                src="/portfolio/photographer/portraitMaindha.png" 
+                alt="Maindha Portrait" 
+                fill 
+                className="object-contain object-bottom drop-shadow-[0_25px_40px_rgba(0,0,0,0.8)] drop-shadow-[0_0_20px_rgba(239,233,233,0.15)] z-50"
+                priority
+              />
+            </div>
           </motion.div>
         </section>
 
