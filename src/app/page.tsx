@@ -44,10 +44,10 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#5A2132] text-[#EFE9E9] font-sans selection:bg-[#EFE9E9] selection:text-[#5A2132]">
       
       {/* 1. SIMPLE HEADER */}
-      <header className="absolute top-0 left-0 w-full z-50 px-6 py-8 md:py-10">
+      <header className="absolute top-0 left-0 w-full z-50 px-6 md:px-10 py-8 md:py-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0 }}>
-            <Link href="/" className="relative w-[150px] md:w-[180px] h-[40px] md:h-[50px] block transition-transform hover:scale-105">
+            <Link href="/" className="relative w-[170px] md:w-[210px] h-[48px] md:h-[60px] block transition-transform hover:scale-105 ml-3 md:ml-4">
               <Image src="/logo.png" alt="Mainz Media Logo" fill className="object-contain object-left" priority />
             </Link>
           </motion.div>
@@ -95,7 +95,7 @@ export default function LandingPage() {
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
                 style={{ y: textY }}
-                className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] md:text-[11vw] lg:text-[10vw] leading-none md:leading-none tracking-tight whitespace-nowrap flex flex-col md:inline-block relative z-10"
+                className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] md:text-[11vw] lg:text-[10vw] leading-none md:leading-none tracking-tight whitespace-nowrap flex flex-col md:inline-block relative z-10 text-white/90"
               >
                 <span>MAINZ</span> <span>MEDIA</span>
               </motion.h1>
@@ -104,7 +104,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 1, delay: 1.2 }}
-                className="absolute -bottom-8 md:-bottom-10 left-1/2 -translate-x-1/2 w-max text-center font-sans text-[10px] md:text-xs tracking-[0.2em] uppercase text-[#EFE9E9]/70 font-semibold z-10"
+                className="absolute -bottom-8 md:-bottom-12 left-1/2 -translate-x-1/2 w-max text-center font-sans text-xs md:text-sm tracking-[0.25em] uppercase text-[#EFE9E9]/80 font-bold z-10"
               >
                 Cinematic Videography & Photography for Brands and Businesses
               </motion.p>
@@ -159,7 +159,7 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             style={{ scale: portraitScale, y: portraitY }}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] sm:w-[95%] md:w-[75%] lg:w-[58%] max-w-[900px] h-[75%] md:h-[80%] lg:h-[85%] z-50 pointer-events-none flex flex-col justify-end"
+            className="absolute bottom-[20px] md:bottom-[30px] left-1/2 -translate-x-1/2 w-[110%] sm:w-[95%] md:w-[75%] lg:w-[58%] max-w-[900px] h-[75%] md:h-[80%] lg:h-[85%] z-50 pointer-events-none flex flex-col justify-end"
           >
             {/* Subtle Spotlight behind portrait */}
             <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#EFE9E9] opacity-10 blur-[80px] md:blur-[100px] rounded-full pointer-events-none -z-10" />
