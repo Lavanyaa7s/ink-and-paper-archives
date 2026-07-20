@@ -47,7 +47,7 @@ export default function LandingPage() {
       <header className="absolute top-0 left-0 w-full z-50 px-6 py-8 md:py-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0 }}>
-            <Link href="/" className="relative w-[150px] md:w-[180px] h-[40px] md:h-[50px] block">
+            <Link href="/" className="relative w-[150px] md:w-[180px] h-[40px] md:h-[50px] block filter invert mix-blend-screen opacity-90 p-1">
               <Image src="/logo.jpg" alt="Mainz Media Logo" fill className="object-contain object-left" priority />
             </Link>
           </motion.div>
@@ -62,7 +62,7 @@ export default function LandingPage() {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.0 }}>
             <Link 
               href="#booking" 
-              className="bg-[#EFE9E9] text-[#5A2132] px-6 py-2 rounded-md font-bold text-sm inline-block shadow-lg hover:scale-[1.04] hover:shadow-xl transition-all duration-200"
+              className="bg-[#EFE9E9] text-[#5A2132] px-6 py-2.5 rounded-xl font-bold text-sm inline-block shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:-translate-y-[3px] hover:scale-[1.04] hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] transition-all duration-300"
             >
               BOOK NOW
             </Link>
@@ -88,7 +88,7 @@ export default function LandingPage() {
 
 
           {/* Massive Typography Background */}
-          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-10 pointer-events-none px-2">
+          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-[calc(50%+15px)] -translate-y-1/2 w-full text-center z-10 pointer-events-none px-2">
             <div className="relative inline-block">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
@@ -99,11 +99,21 @@ export default function LandingPage() {
               >
                 <span>MAINZ</span> <span>MEDIA</span>
               </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 1, delay: 1.2 }}
+                className="absolute -bottom-8 md:-bottom-10 left-1/2 -translate-x-1/2 w-max text-center font-sans text-[10px] md:text-xs tracking-[0.2em] uppercase text-[#EFE9E9]/70 font-semibold z-10"
+              >
+                Cinematic Videography & Photography for Brands and Businesses
+              </motion.p>
+
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-                className="absolute -bottom-[20%] md:-bottom-[15%] lg:-bottom-[20%] right-[-5%] md:right-[2%] lg:right-[5%] text-5xl md:text-3xl lg:text-5xl font-[family-name:var(--font-shrikhand)] tracking-wide z-10 hidden md:block"
+                className="absolute -bottom-[15%] md:-bottom-[12%] lg:-bottom-[18%] right-[-2%] md:right-[5%] lg:right-[8%] text-4xl md:text-2xl lg:text-4xl font-[family-name:var(--font-shrikhand)] tracking-wide z-10 hidden md:block opacity-80"
               >
                 Maindha
               </motion.div>
@@ -129,7 +139,7 @@ export default function LandingPage() {
           </div>
 
           {/* Intertwined Text Mask (Desktop Only) */}
-          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 hidden md:block">
+          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-[calc(50%+15px)] -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 hidden md:block">
             <div className="relative inline-block" style={{ clipPath: 'polygon(88% 0, 100% 0, 100% 100%, 88% 100%)' }}>
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
@@ -149,10 +159,13 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             style={{ scale: portraitScale, y: portraitY }}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full sm:w-[80%] md:w-[60%] lg:w-[45%] max-w-[750px] h-[75%] md:h-[80%] lg:h-[85%] z-50 pointer-events-none flex flex-col justify-end"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] sm:w-[95%] md:w-[75%] lg:w-[58%] max-w-[900px] h-[75%] md:h-[80%] lg:h-[85%] z-50 pointer-events-none flex flex-col justify-end"
           >
             {/* Subtle Spotlight behind portrait */}
             <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#EFE9E9] opacity-10 blur-[80px] md:blur-[100px] rounded-full pointer-events-none -z-10" />
+            {/* Deep Dark Core Shadow behind portrait */}
+            <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[250px] md:w-[400px] h-[300px] md:h-[500px] bg-black opacity-30 blur-[60px] rounded-[100%] pointer-events-none -z-20" />
+            
             <div className="relative w-full h-full">
               {/* Floor Shadow for grounding */}
               <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-[70%] h-[40px] bg-black/60 blur-[20px] rounded-[100%] pointer-events-none -z-10" />
@@ -161,7 +174,7 @@ export default function LandingPage() {
                 src="/portfolio/photographer/portraitMaindha.png" 
                 alt="Maindha Portrait" 
                 fill 
-                className="object-contain object-bottom drop-shadow-[0_25px_40px_rgba(0,0,0,0.8)] drop-shadow-[0_0_20px_rgba(239,233,233,0.15)] z-50"
+                className="object-contain object-bottom drop-shadow-[0_25px_40px_rgba(0,0,0,0.8)] drop-shadow-[0_0_8px_rgba(239,233,233,0.3)] z-50"
                 priority
               />
             </div>
