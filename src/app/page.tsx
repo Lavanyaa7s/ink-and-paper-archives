@@ -88,7 +88,7 @@ export default function LandingPage() {
 
 
           {/* Massive Typography Background */}
-          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -ml-[15px] -translate-y-1/2 w-full text-center z-10 pointer-events-none px-2">
+          <div className="absolute top-[18%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -ml-[15px] -translate-y-1/2 w-full text-center z-10 pointer-events-none px-2">
             <div className="relative inline-block">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
@@ -104,7 +104,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 1, delay: 1.2 }}
-                className="absolute -bottom-[120px] md:-bottom-12 left-1/2 -translate-x-1/2 w-[90vw] md:w-max text-center font-sans text-[10px] md:text-sm tracking-[0.2em] md:tracking-[0.25em] leading-relaxed md:leading-normal uppercase text-[#EFE9E9]/80 font-bold z-10"
+                className="absolute -bottom-[90px] md:-bottom-12 left-1/2 -translate-x-1/2 w-[90vw] md:w-max text-center font-sans text-[10px] md:text-sm tracking-[0.2em] md:tracking-[0.25em] leading-relaxed md:leading-normal uppercase text-[#EFE9E9]/80 font-bold z-10"
               >
                 Cinematic Videography & Photography for Brands and Businesses
               </motion.p>
@@ -121,7 +121,7 @@ export default function LandingPage() {
           </div>
 
           {/* Foreground Signature (Mobile Only) */}
-          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 md:hidden">
+          <div className="absolute top-[18%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 md:hidden">
             <div className="relative inline-block">
               {/* Invisible placeholder to match dimensions */}
               <h1 className="font-[family-name:var(--font-yeseva)] uppercase text-[22vw] leading-none tracking-tight whitespace-nowrap flex flex-col opacity-0">
@@ -139,7 +139,7 @@ export default function LandingPage() {
           </div>
 
           {/* Intertwined Text Mask (Desktop Only) */}
-          <div className="absolute top-[25%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -ml-[15px] -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 hidden md:block">
+          <div className="absolute top-[18%] md:top-[35%] lg:top-[30%] left-1/2 -translate-x-1/2 -ml-[15px] -translate-y-1/2 w-full text-center z-[60] pointer-events-none px-2 hidden md:block">
             <div className="relative inline-block" style={{ clipPath: 'polygon(88% 0, 100% 0, 100% 100%, 88% 100%)' }}>
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }} 
