@@ -44,10 +44,10 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#5A2132] text-[#EFE9E9] font-sans selection:bg-[#EFE9E9] selection:text-[#5A2132]">
       
       {/* 1. SIMPLE HEADER */}
-      <header className="absolute top-0 left-0 w-full z-50 px-6 md:px-10 py-8 md:py-10">
+      <header className="absolute top-0 left-0 w-full z-50 px-6 md:px-10 py-5 md:py-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0 }}>
-            <Link href="/" className="relative w-[170px] md:w-[210px] h-[48px] md:h-[60px] block transition-transform hover:scale-105 ml-3 md:ml-4">
+            <Link href="/" className="relative w-[120px] md:w-[210px] h-[35px] md:h-[60px] block transition-transform hover:scale-105 ml-1 md:ml-4">
               <Image src="/logo.png" alt="Mainz Media Logo" fill className="object-contain object-left" priority />
             </Link>
           </motion.div>
@@ -88,7 +88,7 @@ export default function LandingPage() {
 
 
           {/* Mobile Hero Text — clean stacked layout */}
-          <div className="absolute top-[6%] left-0 w-full text-center z-10 pointer-events-none px-4 flex flex-col items-center gap-2 md:hidden">
+          <div className="absolute top-[14%] left-0 w-full text-center z-10 pointer-events-none px-4 flex flex-col items-center gap-2 md:hidden">
             <motion.h1 
               initial={{ opacity: 0, y: 30 }} 
               animate={{ opacity: 1, y: 0 }} 
