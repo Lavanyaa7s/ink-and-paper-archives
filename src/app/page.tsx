@@ -159,7 +159,7 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             style={{ scale: portraitScale, y: portraitY }}
-            className="absolute bottom-[20px] md:bottom-[30px] left-1/2 -translate-x-1/2 w-[110%] sm:w-[95%] md:w-[75%] lg:w-[58%] max-w-[900px] h-[75%] md:h-[80%] lg:h-[85%] z-50 pointer-events-none flex flex-col justify-end"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] sm:w-[95%] md:w-[75%] lg:w-[58%] max-w-[900px] h-[80%] md:h-[85%] lg:h-[90%] z-50 pointer-events-none flex flex-col justify-end"
           >
             {/* Subtle Spotlight behind portrait */}
             <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#EFE9E9] opacity-10 blur-[80px] md:blur-[100px] rounded-full pointer-events-none -z-10" />
